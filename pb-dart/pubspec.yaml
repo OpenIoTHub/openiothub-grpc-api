@@ -1,4 +1,4 @@
-name: grpc
+name: grpc-api
 description: OpenioTHub Dart gRPC.
 
 version: 1.0.0

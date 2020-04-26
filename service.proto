@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.iotserv.OpenIoTHub.grpc";
+option java_package = "com.iotserv.OpenIoTHub.grpc-api";
 option java_outer_classname = "GrpcService";
 
 package pb;
