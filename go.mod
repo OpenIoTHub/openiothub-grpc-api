@@ -1,4 +1,4 @@
-module github.com/OpenIoTHub/grpc
+module github.com/OpenIoTHub/grpc-api
 
 go 1.14
 
