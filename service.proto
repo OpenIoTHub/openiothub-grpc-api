@@ -118,17 +118,20 @@ service SessionManager {
     rpc CreateOneSOCKS5 (SOCKS5Config) returns (SOCKS5Config) {}
     rpc DeleteOneSOCKS5 (SOCKS5Config) returns (Empty) {}
     rpc GetOneSOCKS5 (SOCKS5Config) returns (SOCKS5Config) {}
-    // HTTP
+    //:TODO  获取所有的设备列表
+    // mDNS刷新列表
+    rpc RefreshmDNSProxyList (SessionConfig) returns (Empty) {}
+    // 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
+    rpc GetAllTCP (SessionConfig) returns (PortList) {}
+    //:TODO VPN接口
+}
+
+// 服务的定义
+service HttpManager {
     rpc CreateOneHTTP (HTTPConfig) returns (HTTPConfig) {}
     rpc DeleteOneHTTP (HTTPConfig) returns (Empty) {}
     rpc GetOneHTTP (HTTPConfig) returns (HTTPConfig) {}
     rpc GetAllHTTP (Empty) returns (HTTPList) {}
-    //:TODO  获取所有的设备列表
-    // mDNS刷新列表
-    rpc RefreshmDNSProxyList (SessionConfig) returns (Empty) {}
-    // 获取通过mDNS自动映射的TCP端口列表（http），然后可以查看页面
-    rpc GetAllTCP (SessionConfig) returns (PortList) {}
-    //:TODO VPN接口
 }
 
 service CommonDeviceManager {
