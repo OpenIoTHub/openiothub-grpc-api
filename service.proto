@@ -1,0 +1,163 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.iotserv.OpenIoTHub.grpc";
+option java_outer_classname = "GrpcService";
+
+package pb;
+
+message StringValue{
+    string Value = 1;
+}
+//小米网关设备
+message Empty{}
+
+message MDNSService{
+    string Instance = 1;
+    string IP = 2;
+    int32 Port = 3;
+    string MDNSInfo = 4;
+}
+
+message Color{
+    int32 R = 1;
+    int32 G = 2;
+    int32 B = 3;
+    int32 A = 4;
+}
+
+message GatewayState{
+    bool    On = 1;
+    Color   Color = 2;
+    uint32  Brightness = 3;
+}
+
+message GatewayUpdateMessage{
+    string ID = 1;
+    GatewayState State = 2;
+}
+
+message Device{
+    string RunId = 1;
+    string Addr = 2;
+    string Mac = 3;
+    string Description = 4;
+}
+
+message DeviceList{
+    repeated Device Devices = 1;
+}
+
+// 几种代理类型
+message SessionConfig {
+    string RunId = 1;
+    string Token = 2;
+    string Description = 3;
+    bool StatusToClient = 4;
+    bool StatusP2PAsClient = 5;
+    bool StatusP2PAsServer = 6;
+}
+
+message SessionList{
+    repeated SessionConfig SessionConfigs = 1;
+}
+
+message PortConfig {
+    Device Device = 1;
+    int32 LocalProt = 2;
+    int32 RemotePort = 3;
+    string Description = 4;
+    bool RemotePortStatus = 5;
+    string MDNSInfo = 6;
+}
+
+message PortList{
+    repeated PortConfig PortConfigs = 1;
+}
+
+message SOCKS5Config {
+    string RunId = 1;
+    int32 Port = 2;
+    string Password = 3;
+    string EncType = 4;
+    string Description = 5;
+}
+
+message SOCKS5List{
+    repeated SOCKS5Config SOCKS5Configs = 1;
+}
+
+message HTTPConfig {
+    string RunId = 1;
+    string Domain = 2;
+    string RemoteIP = 3;
+    int32 RemotePort = 4;
+    string UserName = 5;
+    string Password = 6;
+    bool IfHttps = 7;
+    string Description= 8;
+    bool RemotePortStatus = 9;
+}
+
+message HTTPList{
+    repeated HTTPConfig HTTPConfigs = 1;
+}
+
+message MDNSServiceList{
+    repeated MDNSService MDNSServices = 1;
+}
+
+// 服务的定义
+service SessionManager {
+    // Sends a greeting
+    rpc CreateOneSession (SessionConfig) returns (SessionConfig) {}
+    rpc DeleteOneSession (SessionConfig) returns (Empty) {}
+    rpc GetOneSession (SessionConfig) returns (SessionConfig) {}
+    rpc GetAllSession (Empty) returns (SessionList) {}
+    // Socks5
+    rpc CreateOneSOCKS5 (SOCKS5Config) returns (SOCKS5Config) {}
+    rpc DeleteOneSOCKS5 (SOCKS5Config) returns (Empty) {}
+    rpc GetOneSOCKS5 (SOCKS5Config) returns (SOCKS5Config) {}
+    // HTTP
+    rpc CreateOneHTTP (HTTPConfig) returns (HTTPConfig) {}
+    rpc DeleteOneHTTP (HTTPConfig) returns (Empty) {}
+    rpc GetOneHTTP (HTTPConfig) returns (HTTPConfig) {}
+    rpc GetAllHTTP (Empty) returns (HTTPList) {}
+    //:TODO  获取所有的设备列表
+    // mDNS刷新列表
+    rpc RefreshmDNSProxyList (SessionConfig) returns (Empty) {}
+    // 获取通过mDNS自动映射的TCP端口列表（http），然后可以查看页面
+    rpc GetAllTCP (SessionConfig) returns (PortList) {}
+    //:TODO VPN接口
+}
+
+service CommonDeviceManager {
+    //设备的操作:增删
+    rpc AddDevice (Device) returns (Empty) {}
+    rpc DelDevice (Device) returns (Empty) {}
+    rpc GetAllDevice (Empty) returns (DeviceList) {}
+    //网络唤醒
+    rpc SetDeviceMac (Device) returns (Empty) {}
+    rpc WakeOnLAN (Device) returns (Empty) {}
+    // TCP
+    rpc CreateOneTCP (PortConfig) returns (PortConfig) {}
+    rpc DeleteOneTCP (PortConfig) returns (Empty) {}
+    rpc GetOneTCP (PortConfig) returns (PortConfig) {}
+    rpc GetAllTCP (Device) returns (PortList) {}
+    // UDP
+    rpc CreateOneUDP (PortConfig) returns (PortConfig) {}
+    rpc DeleteOneUDP (PortConfig) returns (Empty) {}
+    rpc GetOneUDP (PortConfig) returns (PortConfig) {}
+    rpc GetAllUDP (Device) returns (PortList) {}
+    // FTP
+    rpc CreateOneFTP (PortConfig) returns (PortConfig) {}
+    rpc DeleteOneFTP (PortConfig) returns (Empty) {}
+    rpc GetOneFTP (PortConfig) returns (PortConfig) {}
+    rpc GetAllFTP (Device) returns (PortList) {}
+}
+
+service Utils {
+    rpc GetAllmDNSServiceList (Empty) returns (MDNSServiceList) {}
+    rpc GetmDNSServiceListByType (StringValue) returns (MDNSServiceList) {}
+    rpc ConvertOctonaryUtf8 (StringValue) returns (StringValue) {}
+}
