@@ -15,13 +15,13 @@ jobs:
         - export PATH="$PATH:$(go env GOPATH)/bin"
       script:
         - protoc --go_out=plugins=grpc:./pb-go service.proto
-  - stage: generateDartFiles
-    os: osx
-    language: dart
-    before_script:
-      - brew update
-      - brew install protobuf
-      - pub global activate protoc_plugin
-      - export PATH=$PATH:$HOME/.pub-cache/bin
-    script:
-      - protoc --dart_out=grpc:./lib/pb service.proto
+    - stage: generateDartFiles
+      os: osx
+      language: dart
+      before_script:
+        - brew update
+        - brew install protobuf
+        - pub global activate protoc_plugin
+        - export PATH=$PATH:$HOME/.pub-cache/bin
+      script:
+        - protoc --dart_out=grpc:./lib/pb service.proto
