@@ -10,7 +10,7 @@ jobs:
         - brew update
         - export GO111MODULE=on
         - go get google.golang.org/grpc@v1.28.1
-        - brew install protobuf
+        - brew upgrade protobuf
         - go get github.com/golang/protobuf/protoc-gen-go
         - export PATH="$PATH:$(go env GOPATH)/bin"
       script:
@@ -20,7 +20,7 @@ jobs:
       language: dart
       before_script:
         - brew update
-        - brew install protobuf
+        - brew upgrade protobuf
         - pub global activate protoc_plugin
         - export PATH=$PATH:$HOME/.pub-cache/bin
       script:
