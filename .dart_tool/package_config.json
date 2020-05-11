@@ -33,9 +33,9 @@
     },
     {
       "name": "bazel_worker",
-      "rootUri": "file:///C:/Users/Farry/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/bazel_worker-0.1.21+1",
+      "rootUri": "file:///C:/Users/Farry/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/bazel_worker-0.1.23+1",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.3"
     },
     {
       "name": "boolean_selector",
@@ -327,7 +327,7 @@
     },
     {
       "name": "protobuf",
-      "rootUri": "file:///C:/Users/Farry/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/protobuf-0.13.16+1",
+      "rootUri": "file:///C:/Users/Farry/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/protobuf-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -494,7 +494,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-05-11T09:50:59.175906Z",
+  "generated": "2020-05-11T10:16:39.746631Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.14.0.flutter-db5dc11b9b"
 }
