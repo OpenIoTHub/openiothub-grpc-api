@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.iotserv.OpenIoTHub.grpc-api";
+option java_package = "com.iotserv.OpenIoTHub.openiothub-grpc-api";
 option java_outer_classname = "GrpcService";
 
 package pb;
@@ -87,22 +87,6 @@ message SOCKS5List{
     repeated SOCKS5Config SOCKS5Configs = 1;
 }
 
-message HTTPConfig {
-    string RunId = 1;
-    string Domain = 2;
-    string RemoteIP = 3;
-    int32 RemotePort = 4;
-    string UserName = 5;
-    string Password = 6;
-    bool IfHttps = 7;
-    string Description= 8;
-    bool RemotePortStatus = 9;
-}
-
-message HTTPList{
-    repeated HTTPConfig HTTPConfigs = 1;
-}
-
 message MDNSServiceList{
     repeated MDNSService MDNSServices = 1;
 }
@@ -127,13 +111,6 @@ service SessionManager {
 }
 
 // 服务的定义
-service HttpManager {
-    rpc CreateOneHTTP (HTTPConfig) returns (HTTPConfig) {}
-    rpc DeleteOneHTTP (HTTPConfig) returns (Empty) {}
-    rpc GetOneHTTP (HTTPConfig) returns (HTTPConfig) {}
-    rpc GetAllHTTP (Empty) returns (HTTPList) {}
-}
-
 service CommonDeviceManager {
     //设备的操作:增删
     rpc AddDevice (Device) returns (Empty) {}
