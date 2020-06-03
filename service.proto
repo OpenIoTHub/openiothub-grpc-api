@@ -136,4 +136,6 @@ service Utils {
     rpc GetAllmDNSServiceList (Empty) returns (MDNSServiceList) {}
     rpc GetmDNSServiceListByType (StringValue) returns (MDNSServiceList) {}
     rpc ConvertOctonaryUtf8 (StringValue) returns (StringValue) {}
+    rpc GetAllConfig (Empty) returns (StringValue) {}
+    rpc LoadAllConfig (StringValue) returns (Empty) {}
 }

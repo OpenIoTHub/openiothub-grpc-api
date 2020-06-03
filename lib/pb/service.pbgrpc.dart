@@ -734,6 +734,14 @@ class UtilsClient extends $grpc.Client {
           '/pb.Utils/ConvertOctonaryUtf8',
           ($0.StringValue value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value));
+  static final _$getAllConfig = $grpc.ClientMethod<$0.Empty, $0.StringValue>(
+      '/pb.Utils/GetAllConfig',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value));
+  static final _$loadAllConfig = $grpc.ClientMethod<$0.StringValue, $0.Empty>(
+      '/pb.Utils/LoadAllConfig',
+      ($0.StringValue value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
   UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -764,6 +772,22 @@ class UtilsClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$0.StringValue> getAllConfig($0.Empty request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$getAllConfig, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$0.Empty> loadAllConfig($0.StringValue request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$loadAllConfig, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class UtilsServiceBase extends $grpc.Service {
@@ -791,6 +815,20 @@ abstract class UtilsServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
         ($0.StringValue value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $0.StringValue>(
+        'GetAllConfig',
+        getAllConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($0.StringValue value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.Empty>(
+        'LoadAllConfig',
+        loadAllConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
+        ($0.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList_Pre(
@@ -808,10 +846,24 @@ abstract class UtilsServiceBase extends $grpc.Service {
     return convertOctonaryUtf8(call, await request);
   }
 
+  $async.Future<$0.StringValue> getAllConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getAllConfig(call, await request);
+  }
+
+  $async.Future<$0.Empty> loadAllConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+    return loadAllConfig(call, await request);
+  }
+
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$0.MDNSServiceList> getmDNSServiceListByType(
       $grpc.ServiceCall call, $0.StringValue request);
   $async.Future<$0.StringValue> convertOctonaryUtf8(
+      $grpc.ServiceCall call, $0.StringValue request);
+  $async.Future<$0.StringValue> getAllConfig(
+      $grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$0.Empty> loadAllConfig(
       $grpc.ServiceCall call, $0.StringValue request);
 }
