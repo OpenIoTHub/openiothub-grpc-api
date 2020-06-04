@@ -87,6 +87,18 @@ message MDNSServiceList{
     repeated MDNSService MDNSServices = 1;
 }
 
+message TokenModel{
+    string RunId = 1;
+    string Host = 2;
+    int32 TcpPort = 3;
+    int32 KcpPort = 4;
+    int32 TlsPort = 5;
+    int32 GrpcPort = 6;
+    int32 UDPApiPort = 7;
+    int32 KCPApiPort = 8;
+    int32 Permission = 9;
+}
+
 // 服务的定义
 service SessionManager {
     // Sends a greeting
@@ -138,4 +150,5 @@ service Utils {
     rpc ConvertOctonaryUtf8 (StringValue) returns (StringValue) {}
     rpc GetAllConfig (Empty) returns (StringValue) {}
     rpc LoadAllConfig (StringValue) returns (Empty) {}
+    rpc GetTokenModel (StringValue) returns (TokenModel) {}
 }

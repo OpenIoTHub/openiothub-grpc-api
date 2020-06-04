@@ -133,3 +133,18 @@ const MDNSServiceList$json = const {
   ],
 };
 
+const TokenModel$json = const {
+  '1': 'TokenModel',
+  '2': const [
+    const {'1': 'RunId', '3': 1, '4': 1, '5': 9, '10': 'RunId'},
+    const {'1': 'Host', '3': 2, '4': 1, '5': 9, '10': 'Host'},
+    const {'1': 'TcpPort', '3': 3, '4': 1, '5': 5, '10': 'TcpPort'},
+    const {'1': 'KcpPort', '3': 4, '4': 1, '5': 5, '10': 'KcpPort'},
+    const {'1': 'TlsPort', '3': 5, '4': 1, '5': 5, '10': 'TlsPort'},
+    const {'1': 'GrpcPort', '3': 6, '4': 1, '5': 5, '10': 'GrpcPort'},
+    const {'1': 'UDPApiPort', '3': 7, '4': 1, '5': 5, '10': 'UDPApiPort'},
+    const {'1': 'KCPApiPort', '3': 8, '4': 1, '5': 5, '10': 'KCPApiPort'},
+    const {'1': 'Permission', '3': 9, '4': 1, '5': 5, '10': 'Permission'},
+  ],
+};
+

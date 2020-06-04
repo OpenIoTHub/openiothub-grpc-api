@@ -742,6 +742,11 @@ class UtilsClient extends $grpc.Client {
       '/pb.Utils/LoadAllConfig',
       ($0.StringValue value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$getTokenModel =
+      $grpc.ClientMethod<$0.StringValue, $0.TokenModel>(
+          '/pb.Utils/GetTokenModel',
+          ($0.StringValue value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.TokenModel.fromBuffer(value));
 
   UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -788,6 +793,14 @@ class UtilsClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$0.TokenModel> getTokenModel($0.StringValue request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$getTokenModel, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class UtilsServiceBase extends $grpc.Service {
@@ -829,6 +842,13 @@ abstract class UtilsServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
         ($0.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.TokenModel>(
+        'GetTokenModel',
+        getTokenModel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
+        ($0.TokenModel value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList_Pre(
@@ -856,6 +876,11 @@ abstract class UtilsServiceBase extends $grpc.Service {
     return loadAllConfig(call, await request);
   }
 
+  $async.Future<$0.TokenModel> getTokenModel_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+    return getTokenModel(call, await request);
+  }
+
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$0.MDNSServiceList> getmDNSServiceListByType(
@@ -865,5 +890,7 @@ abstract class UtilsServiceBase extends $grpc.Service {
   $async.Future<$0.StringValue> getAllConfig(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$0.Empty> loadAllConfig(
+      $grpc.ServiceCall call, $0.StringValue request);
+  $async.Future<$0.TokenModel> getTokenModel(
       $grpc.ServiceCall call, $0.StringValue request);
 }

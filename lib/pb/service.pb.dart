@@ -700,3 +700,114 @@ class MDNSServiceList extends $pb.GeneratedMessage {
   $core.List<MDNSService> get mDNSServices => $_getList(0);
 }
 
+class TokenModel extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('TokenModel', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+    ..aOS(1, 'RunId', protoName: 'RunId')
+    ..aOS(2, 'Host', protoName: 'Host')
+    ..a<$core.int>(3, 'TcpPort', $pb.PbFieldType.O3, protoName: 'TcpPort')
+    ..a<$core.int>(4, 'KcpPort', $pb.PbFieldType.O3, protoName: 'KcpPort')
+    ..a<$core.int>(5, 'TlsPort', $pb.PbFieldType.O3, protoName: 'TlsPort')
+    ..a<$core.int>(6, 'GrpcPort', $pb.PbFieldType.O3, protoName: 'GrpcPort')
+    ..a<$core.int>(7, 'UDPApiPort', $pb.PbFieldType.O3, protoName: 'UDPApiPort')
+    ..a<$core.int>(8, 'KCPApiPort', $pb.PbFieldType.O3, protoName: 'KCPApiPort')
+    ..a<$core.int>(9, 'Permission', $pb.PbFieldType.O3, protoName: 'Permission')
+    ..hasRequiredFields = false
+  ;
+
+  TokenModel._() : super();
+  factory TokenModel() => create();
+  factory TokenModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TokenModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  TokenModel clone() => TokenModel()..mergeFromMessage(this);
+  TokenModel copyWith(void Function(TokenModel) updates) => super.copyWith((message) => updates(message as TokenModel));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TokenModel create() => TokenModel._();
+  TokenModel createEmptyInstance() => create();
+  static $pb.PbList<TokenModel> createRepeated() => $pb.PbList<TokenModel>();
+  @$core.pragma('dart2js:noInline')
+  static TokenModel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenModel>(create);
+  static TokenModel _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get runId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set runId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRunId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRunId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get host => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set host($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHost() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHost() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get tcpPort => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set tcpPort($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTcpPort() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTcpPort() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get kcpPort => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set kcpPort($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasKcpPort() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKcpPort() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get tlsPort => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set tlsPort($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTlsPort() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTlsPort() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get grpcPort => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set grpcPort($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasGrpcPort() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrpcPort() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get uDPApiPort => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set uDPApiPort($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUDPApiPort() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUDPApiPort() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get kCPApiPort => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set kCPApiPort($core.int v) { $_setSignedInt32(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasKCPApiPort() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearKCPApiPort() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get permission => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set permission($core.int v) { $_setSignedInt32(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPermission() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPermission() => clearField(9);
+}
+

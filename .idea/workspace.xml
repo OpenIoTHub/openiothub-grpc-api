@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
@@ -125,24 +123,25 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rename project;&#10;remove server grpc api" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update:添加获取配置和加载配置的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="update:添加获取配置和加载配置的接口" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="498" y="85" key="CommitChangelistDialog2" timestamp="1589177910514">
+    <state x="498" y="85" key="CommitChangelistDialog2" timestamp="1591180707394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="498" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589177910514" />
-    <state x="166" y="96" key="DiffContextDialog" timestamp="1589177907994">
+    <state x="498" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591180707394" />
+    <state x="166" y="96" key="DiffContextDialog" timestamp="1591180676831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="166" y="96" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589177907994" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589190188313">
+    <state x="166" y="96" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591180676831" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1591180752539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589190188313" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591180752539" />
     <state x="661" y="223" width="598" height="594" key="find.popup" timestamp="1589176389965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
