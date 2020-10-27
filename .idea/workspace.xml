@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +15,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" path="C:\Go" />
+  <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -71,7 +76,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -113,12 +118,13 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rename project;&#10;remove server grpc api" />
@@ -130,21 +136,9 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="498" y="85" key="CommitChangelistDialog2" timestamp="1591180707394">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="440" y="196" key="#GOROOT" timestamp="1603784622984">
+      <screen x="0" y="23" width="1680" height="991" />
     </state>
-    <state x="498" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591180707394" />
-    <state x="166" y="96" key="DiffContextDialog" timestamp="1591180676831">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="166" y="96" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591180676831" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1591180752539">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591180752539" />
-    <state x="661" y="223" width="598" height="594" key="find.popup" timestamp="1589176389965">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="661" y="223" width="598" height="594" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589176389965" />
+    <state x="440" y="196" key="#GOROOT/0.23.1680.991@0.23.1680.991" timestamp="1603784622984" />
   </component>
 </project>
