@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
+    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,13 +135,13 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="440" y="196" key="#GOROOT/0.23.1680.991@0.23.1680.991" timestamp="1603784622984" />
-    <state x="421" y="118" key="CommitChangelistDialog2" timestamp="1603786759919">
+    <state x="421" y="118" key="CommitChangelistDialog2" timestamp="1603789464703">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
-    <state x="421" y="118" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1603786759919" />
-    <state x="440" y="259" key="Vcs.Push.Dialog.v2" timestamp="1603786766101">
+    <state x="421" y="118" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1603789464703" />
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2" timestamp="1603790121582">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
-    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1603786766101" />
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1603790121582" />
   </component>
 </project>
