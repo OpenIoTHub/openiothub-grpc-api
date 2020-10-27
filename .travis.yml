@@ -6,9 +6,10 @@ jobs:
     - stage: generateGoFiles
       os: osx
       language: go
+      env:
+        - GO111MODULE=on
       before_script:
         - brew update
-        - export GO111MODULE=on
         - go get google.golang.org/grpc@v1.28.1
         - brew upgrade protobuf
         - go get -u google.golang.org/protobuf/cmd/protoc-gen-go
