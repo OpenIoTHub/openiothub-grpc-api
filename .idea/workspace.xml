@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,9 +123,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rename project;&#10;remove server grpc api" />
-    <MESSAGE value="update" />
     <MESSAGE value="update:添加获取配置和加载配置的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="update:添加获取配置和加载配置的接口" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -140,5 +135,13 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="440" y="196" key="#GOROOT/0.23.1680.991@0.23.1680.991" timestamp="1603784622984" />
+    <state x="421" y="118" key="CommitChangelistDialog2" timestamp="1603785395490">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="421" y="118" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1603785395490" />
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2" timestamp="1603785401078">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1603785401078" />
   </component>
 </project>
