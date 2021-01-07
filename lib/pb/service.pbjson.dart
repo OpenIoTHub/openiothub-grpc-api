@@ -144,7 +144,7 @@ const TokenModel$json = const {
     const {'1': 'GrpcPort', '3': 6, '4': 1, '5': 5, '10': 'GrpcPort'},
     const {'1': 'UDPApiPort', '3': 7, '4': 1, '5': 5, '10': 'UDPApiPort'},
     const {'1': 'KCPApiPort', '3': 8, '4': 1, '5': 5, '10': 'KCPApiPort'},
-    const {'1': 'Permission', '3': 9, '4': 1, '5': 5, '10': 'Permission'},
+    const {'1': 'Permission', '3': 9, '4': 3, '5': 9, '10': 'Permission'},
   ],
 };
 

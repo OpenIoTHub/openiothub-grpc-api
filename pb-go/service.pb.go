@@ -936,15 +936,15 @@ type TokenModel struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RunId      string `protobuf:"bytes,1,opt,name=RunId,proto3" json:"RunId,omitempty"`
-	Host       string `protobuf:"bytes,2,opt,name=Host,proto3" json:"Host,omitempty"`
-	TcpPort    int32  `protobuf:"varint,3,opt,name=TcpPort,proto3" json:"TcpPort,omitempty"`
-	KcpPort    int32  `protobuf:"varint,4,opt,name=KcpPort,proto3" json:"KcpPort,omitempty"`
-	TlsPort    int32  `protobuf:"varint,5,opt,name=TlsPort,proto3" json:"TlsPort,omitempty"`
-	GrpcPort   int32  `protobuf:"varint,6,opt,name=GrpcPort,proto3" json:"GrpcPort,omitempty"`
-	UDPApiPort int32  `protobuf:"varint,7,opt,name=UDPApiPort,proto3" json:"UDPApiPort,omitempty"`
-	KCPApiPort int32  `protobuf:"varint,8,opt,name=KCPApiPort,proto3" json:"KCPApiPort,omitempty"`
-	Permission int32  `protobuf:"varint,9,opt,name=Permission,proto3" json:"Permission,omitempty"`
+	RunId      string   `protobuf:"bytes,1,opt,name=RunId,proto3" json:"RunId,omitempty"`
+	Host       string   `protobuf:"bytes,2,opt,name=Host,proto3" json:"Host,omitempty"`
+	TcpPort    int32    `protobuf:"varint,3,opt,name=TcpPort,proto3" json:"TcpPort,omitempty"`
+	KcpPort    int32    `protobuf:"varint,4,opt,name=KcpPort,proto3" json:"KcpPort,omitempty"`
+	TlsPort    int32    `protobuf:"varint,5,opt,name=TlsPort,proto3" json:"TlsPort,omitempty"`
+	GrpcPort   int32    `protobuf:"varint,6,opt,name=GrpcPort,proto3" json:"GrpcPort,omitempty"`
+	UDPApiPort int32    `protobuf:"varint,7,opt,name=UDPApiPort,proto3" json:"UDPApiPort,omitempty"`
+	KCPApiPort int32    `protobuf:"varint,8,opt,name=KCPApiPort,proto3" json:"KCPApiPort,omitempty"`
+	Permission []string `protobuf:"bytes,9,rep,name=Permission,proto3" json:"Permission,omitempty"`
 }
 
 func (x *TokenModel) Reset() {
@@ -1035,11 +1035,11 @@ func (x *TokenModel) GetKCPApiPort() int32 {
 	return 0
 }
 
-func (x *TokenModel) GetPermission() int32 {
+func (x *TokenModel) GetPermission() []string {
 	if x != nil {
 		return x.Permission
 	}
-	return 0
+	return nil
 }
 
 var File_service_proto protoreflect.FileDescriptor
@@ -1150,7 +1150,7 @@ var file_service_proto_rawDesc = []byte{
 	0x69, 0x50, 0x6f, 0x72, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x4b, 0x43, 0x50, 0x41, 0x70, 0x69, 0x50,
 	0x6f, 0x72, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x4b, 0x43, 0x50, 0x41, 0x70,
 	0x69, 0x50, 0x6f, 0x72, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x50, 0x65, 0x72, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x50, 0x65, 0x72, 0x6d, 0x69,
+	0x69, 0x6f, 0x6e, 0x18, 0x09, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0a, 0x50, 0x65, 0x72, 0x6d, 0x69,
 	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x32, 0xf1, 0x03, 0x0a, 0x0e, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f,
 	0x6e, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x3a, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x4f, 0x6e, 0x65, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x11, 0x2e, 0x70,

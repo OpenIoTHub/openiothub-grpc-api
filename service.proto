@@ -98,7 +98,7 @@ message TokenModel{
     int32 GrpcPort = 6;
     int32 UDPApiPort = 7;
     int32 KCPApiPort = 8;
-    int32 Permission = 9;
+    repeated string Permission = 9;
 }
 
 // 服务的定义

@@ -710,7 +710,7 @@ class TokenModel extends $pb.GeneratedMessage {
     ..a<$core.int>(6, 'GrpcPort', $pb.PbFieldType.O3, protoName: 'GrpcPort')
     ..a<$core.int>(7, 'UDPApiPort', $pb.PbFieldType.O3, protoName: 'UDPApiPort')
     ..a<$core.int>(8, 'KCPApiPort', $pb.PbFieldType.O3, protoName: 'KCPApiPort')
-    ..a<$core.int>(9, 'Permission', $pb.PbFieldType.O3, protoName: 'Permission')
+    ..pPS(9, 'Permission', protoName: 'Permission')
     ..hasRequiredFields = false
   ;
 
@@ -802,12 +802,6 @@ class TokenModel extends $pb.GeneratedMessage {
   void clearKCPApiPort() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.int get permission => $_getIZ(8);
-  @$pb.TagNumber(9)
-  set permission($core.int v) { $_setSignedInt32(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasPermission() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearPermission() => clearField(9);
+  $core.List<$core.String> get permission => $_getList(8);
 }
 
