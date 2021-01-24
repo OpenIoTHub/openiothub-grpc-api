@@ -89,6 +89,26 @@ const SessionList$json = const {
   ],
 };
 
+const PortService$json = const {
+  '1': 'PortService',
+  '2': const [
+    const {'1': 'Ip', '3': 1, '4': 1, '5': 9, '10': 'Ip'},
+    const {'1': 'Port', '3': 2, '4': 1, '5': 5, '10': 'Port'},
+    const {'1': 'IsLocal', '3': 3, '4': 1, '5': 8, '10': 'IsLocal'},
+    const {'1': 'Info', '3': 4, '4': 3, '5': 11, '6': '.pb.PortService.InfoEntry', '10': 'Info'},
+  ],
+  '3': const [PortService_InfoEntry$json],
+};
+
+const PortService_InfoEntry$json = const {
+  '1': 'InfoEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 const PortConfig$json = const {
   '1': 'PortConfig',
   '2': const [
@@ -97,7 +117,7 @@ const PortConfig$json = const {
     const {'1': 'RemotePort', '3': 3, '4': 1, '5': 5, '10': 'RemotePort'},
     const {'1': 'Description', '3': 4, '4': 1, '5': 9, '10': 'Description'},
     const {'1': 'RemotePortStatus', '3': 5, '4': 1, '5': 8, '10': 'RemotePortStatus'},
-    const {'1': 'MDNSInfo', '3': 6, '4': 1, '5': 9, '10': 'MDNSInfo'},
+    const {'1': 'MDNSInfo', '3': 6, '4': 1, '5': 11, '6': '.pb.PortService', '10': 'MDNSInfo'},
   ],
 };
 

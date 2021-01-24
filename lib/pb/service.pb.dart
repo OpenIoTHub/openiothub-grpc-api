@@ -471,6 +471,61 @@ class SessionList extends $pb.GeneratedMessage {
   $core.List<SessionConfig> get sessionConfigs => $_getList(0);
 }
 
+class PortService extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('PortService', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+    ..aOS(1, 'Ip', protoName: 'Ip')
+    ..a<$core.int>(2, 'Port', $pb.PbFieldType.O3, protoName: 'Port')
+    ..aOB(3, 'IsLocal', protoName: 'IsLocal')
+    ..m<$core.String, $core.String>(4, 'Info', protoName: 'Info', entryClassName: 'PortService.InfoEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('pb'))
+    ..hasRequiredFields = false
+  ;
+
+  PortService._() : super();
+  factory PortService() => create();
+  factory PortService.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PortService.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PortService clone() => PortService()..mergeFromMessage(this);
+  PortService copyWith(void Function(PortService) updates) => super.copyWith((message) => updates(message as PortService));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PortService create() => PortService._();
+  PortService createEmptyInstance() => create();
+  static $pb.PbList<PortService> createRepeated() => $pb.PbList<PortService>();
+  @$core.pragma('dart2js:noInline')
+  static PortService getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PortService>(create);
+  static PortService _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ip => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ip($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIp() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get port => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set port($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPort() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPort() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isLocal => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isLocal($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsLocal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsLocal() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.Map<$core.String, $core.String> get info => $_getMap(3);
+}
+
 class PortConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('PortConfig', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOM<Device>(1, 'Device', protoName: 'Device', subBuilder: Device.create)
@@ -478,7 +533,7 @@ class PortConfig extends $pb.GeneratedMessage {
     ..a<$core.int>(3, 'RemotePort', $pb.PbFieldType.O3, protoName: 'RemotePort')
     ..aOS(4, 'Description', protoName: 'Description')
     ..aOB(5, 'RemotePortStatus', protoName: 'RemotePortStatus')
-    ..aOS(6, 'MDNSInfo', protoName: 'MDNSInfo')
+    ..aOM<PortService>(6, 'MDNSInfo', protoName: 'MDNSInfo', subBuilder: PortService.create)
     ..hasRequiredFields = false
   ;
 
@@ -545,13 +600,15 @@ class PortConfig extends $pb.GeneratedMessage {
   void clearRemotePortStatus() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get mDNSInfo => $_getSZ(5);
+  PortService get mDNSInfo => $_getN(5);
   @$pb.TagNumber(6)
-  set mDNSInfo($core.String v) { $_setString(5, v); }
+  set mDNSInfo(PortService v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasMDNSInfo() => $_has(5);
   @$pb.TagNumber(6)
   void clearMDNSInfo() => clearField(6);
+  @$pb.TagNumber(6)
+  PortService ensureMDNSInfo() => $_ensure(5);
 }
 
 class PortList extends $pb.GeneratedMessage {

@@ -60,13 +60,25 @@ message SessionList{
     repeated SessionConfig SessionConfigs = 1;
 }
 
+message PortService{
+    //    String ip;
+    string Ip = 1;
+    //    int port;
+    int32 Port = 2;
+    //    bool isLocal = false;
+    bool IsLocal = 3;
+    //  设备的注册信息
+    //  Map<String, dynamic> info = Map<String, dynamic>();
+    map<string, string> Info = 4;
+}
+
 message PortConfig {
     Device Device = 1;
     int32 LocalProt = 2;
     int32 RemotePort = 3;
     string Description = 4;
     bool RemotePortStatus = 5;
-    string MDNSInfo = 6;
+    PortService MDNSInfo = 6;
 }
 
 message PortList{
