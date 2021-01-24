@@ -26,33 +26,6 @@ const MDNSService$json = const {
   ],
 };
 
-const Color$json = const {
-  '1': 'Color',
-  '2': const [
-    const {'1': 'R', '3': 1, '4': 1, '5': 5, '10': 'R'},
-    const {'1': 'G', '3': 2, '4': 1, '5': 5, '10': 'G'},
-    const {'1': 'B', '3': 3, '4': 1, '5': 5, '10': 'B'},
-    const {'1': 'A', '3': 4, '4': 1, '5': 5, '10': 'A'},
-  ],
-};
-
-const GatewayState$json = const {
-  '1': 'GatewayState',
-  '2': const [
-    const {'1': 'On', '3': 1, '4': 1, '5': 8, '10': 'On'},
-    const {'1': 'Color', '3': 2, '4': 1, '5': 11, '6': '.pb.Color', '10': 'Color'},
-    const {'1': 'Brightness', '3': 3, '4': 1, '5': 13, '10': 'Brightness'},
-  ],
-};
-
-const GatewayUpdateMessage$json = const {
-  '1': 'GatewayUpdateMessage',
-  '2': const [
-    const {'1': 'ID', '3': 1, '4': 1, '5': 9, '10': 'ID'},
-    const {'1': 'State', '3': 2, '4': 1, '5': 11, '6': '.pb.GatewayState', '10': 'State'},
-  ],
-};
-
 const Device$json = const {
   '1': 'Device',
   '2': const [
