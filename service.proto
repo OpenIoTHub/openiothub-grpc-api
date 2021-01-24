@@ -17,24 +17,6 @@ message MDNSService{
     string MDNSInfo = 4;
 }
 
-message Color{
-    int32 R = 1;
-    int32 G = 2;
-    int32 B = 3;
-    int32 A = 4;
-}
-
-message GatewayState{
-    bool    On = 1;
-    Color   Color = 2;
-    uint32  Brightness = 3;
-}
-
-message GatewayUpdateMessage{
-    string ID = 1;
-    GatewayState State = 2;
-}
-
 message Device{
     string RunId = 1;
     string Addr = 2;

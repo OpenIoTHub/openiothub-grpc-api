@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb-go/service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,11 +137,11 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="440" y="196" key="#GOROOT/0.23.1680.991@0.23.1680.991" timestamp="1603784622984" />
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1611477213148">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1611477239744">
       <screen x="0" y="25" width="1680" height="983" />
     </state>
     <state x="421" y="118" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1603809808922" />
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.983@0.25.1680.983" timestamp="1611477213148" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.983@0.25.1680.983" timestamp="1611477239744" />
     <state x="168" y="112" key="DiffContextDialog" timestamp="1611477208801">
       <screen x="0" y="25" width="1680" height="983" />
     </state>
@@ -152,10 +151,10 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="341" y="157" key="SettingsEditor/0.23.1680.991@0.23.1680.991" timestamp="1603804069827" />
-    <state x="440" y="259" key="Vcs.Push.Dialog.v2" timestamp="1610085838802">
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2" timestamp="1611477485713">
       <screen x="0" y="25" width="1680" height="983" />
     </state>
     <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1603809813218" />
-    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.25.1680.983@0.25.1680.983" timestamp="1610085838802" />
+    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.25.1680.983@0.25.1680.983" timestamp="1611477485713" />
   </component>
 </project>
