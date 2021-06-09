@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,19 +137,19 @@
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1617611469175">
-      <screen x="0" y="25" width="1680" height="988" />
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1623243753513">
+      <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.983@0.25.1680.983" timestamp="1611506591598" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1623243753513" />
     <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.988@0.25.1680.988" timestamp="1617611469175" />
-    <state x="168" y="112" key="DiffContextDialog" timestamp="1611477208801">
-      <screen x="0" y="25" width="1680" height="983" />
+    <state x="162" y="114" key="DiffContextDialog" timestamp="1623243750719">
+      <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="168" y="112" key="DiffContextDialog/0.25.1680.983@0.25.1680.983" timestamp="1611477208801" />
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1617611474217">
-      <screen x="0" y="25" width="1680" height="988" />
+    <state x="162" y="114" key="DiffContextDialog/0.25.1680.986@0.25.1680.986" timestamp="1623243750719" />
+    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1623243760293">
+      <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="440" y="259" key="Vcs.Push.Dialog.v2/0.25.1680.983@0.25.1680.983" timestamp="1611506603478" />
+    <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.986@0.25.1680.986" timestamp="1623243760293" />
     <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.988@0.25.1680.988" timestamp="1617611474217" />
   </component>
 </project>
