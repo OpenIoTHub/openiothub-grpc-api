@@ -9,26 +9,26 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class StringValue extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('StringValue', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+class OpenIoTHubStringValue extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OpenIoTHubStringValue', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOS(1, 'Value', protoName: 'Value')
     ..hasRequiredFields = false
   ;
 
-  StringValue._() : super();
-  factory StringValue() => create();
-  factory StringValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StringValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  StringValue clone() => StringValue()..mergeFromMessage(this);
-  StringValue copyWith(void Function(StringValue) updates) => super.copyWith((message) => updates(message as StringValue));
+  OpenIoTHubStringValue._() : super();
+  factory OpenIoTHubStringValue() => create();
+  factory OpenIoTHubStringValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OpenIoTHubStringValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  OpenIoTHubStringValue clone() => OpenIoTHubStringValue()..mergeFromMessage(this);
+  OpenIoTHubStringValue copyWith(void Function(OpenIoTHubStringValue) updates) => super.copyWith((message) => updates(message as OpenIoTHubStringValue));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static StringValue create() => StringValue._();
-  StringValue createEmptyInstance() => create();
-  static $pb.PbList<StringValue> createRepeated() => $pb.PbList<StringValue>();
+  static OpenIoTHubStringValue create() => OpenIoTHubStringValue._();
+  OpenIoTHubStringValue createEmptyInstance() => create();
+  static $pb.PbList<OpenIoTHubStringValue> createRepeated() => $pb.PbList<OpenIoTHubStringValue>();
   @$core.pragma('dart2js:noInline')
-  static StringValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StringValue>(create);
-  static StringValue _defaultInstance;
+  static OpenIoTHubStringValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OpenIoTHubStringValue>(create);
+  static OpenIoTHubStringValue _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get value => $_getSZ(0);
@@ -40,25 +40,25 @@ class StringValue extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
-class Empty extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Empty', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+class OpenIoTHubEmpty extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OpenIoTHubEmpty', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  Empty._() : super();
-  factory Empty() => create();
-  factory Empty.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Empty.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  Empty clone() => Empty()..mergeFromMessage(this);
-  Empty copyWith(void Function(Empty) updates) => super.copyWith((message) => updates(message as Empty));
+  OpenIoTHubEmpty._() : super();
+  factory OpenIoTHubEmpty() => create();
+  factory OpenIoTHubEmpty.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OpenIoTHubEmpty.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  OpenIoTHubEmpty clone() => OpenIoTHubEmpty()..mergeFromMessage(this);
+  OpenIoTHubEmpty copyWith(void Function(OpenIoTHubEmpty) updates) => super.copyWith((message) => updates(message as OpenIoTHubEmpty));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Empty create() => Empty._();
-  Empty createEmptyInstance() => create();
-  static $pb.PbList<Empty> createRepeated() => $pb.PbList<Empty>();
+  static OpenIoTHubEmpty create() => OpenIoTHubEmpty._();
+  OpenIoTHubEmpty createEmptyInstance() => create();
+  static $pb.PbList<OpenIoTHubEmpty> createRepeated() => $pb.PbList<OpenIoTHubEmpty>();
   @$core.pragma('dart2js:noInline')
-  static Empty getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Empty>(create);
-  static Empty _defaultInstance;
+  static OpenIoTHubEmpty getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OpenIoTHubEmpty>(create);
+  static OpenIoTHubEmpty _defaultInstance;
 }
 
 class OpenIoTHubOperationResponse extends $pb.GeneratedMessage {

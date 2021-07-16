@@ -19,16 +19,16 @@ const _ = grpc.SupportPackageIsVersion7
 type SessionManagerClient interface {
 	// Sends a greeting
 	CreateOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*SessionConfig, error)
-	DeleteOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*Empty, error)
+	DeleteOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*SessionConfig, error)
-	GetAllSession(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*SessionList, error)
+	GetAllSession(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*SessionList, error)
 	// Socks5
 	CreateOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*SOCKS5Config, error)
-	DeleteOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*Empty, error)
+	DeleteOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*SOCKS5Config, error)
 	//:TODO  获取所有的设备列表
 	// mDNS刷新列表
-	RefreshmDNSProxyList(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*Empty, error)
+	RefreshmDNSProxyList(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	// 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
 	GetAllTCP(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*PortList, error)
 }
@@ -50,8 +50,8 @@ func (c *sessionManagerClient) CreateOneSession(ctx context.Context, in *Session
 	return out, nil
 }
 
-func (c *sessionManagerClient) DeleteOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *sessionManagerClient) DeleteOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.SessionManager/DeleteOneSession", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -68,7 +68,7 @@ func (c *sessionManagerClient) GetOneSession(ctx context.Context, in *SessionCon
 	return out, nil
 }
 
-func (c *sessionManagerClient) GetAllSession(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*SessionList, error) {
+func (c *sessionManagerClient) GetAllSession(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*SessionList, error) {
 	out := new(SessionList)
 	err := c.cc.Invoke(ctx, "/pb.SessionManager/GetAllSession", in, out, opts...)
 	if err != nil {
@@ -86,8 +86,8 @@ func (c *sessionManagerClient) CreateOneSOCKS5(ctx context.Context, in *SOCKS5Co
 	return out, nil
 }
 
-func (c *sessionManagerClient) DeleteOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *sessionManagerClient) DeleteOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.SessionManager/DeleteOneSOCKS5", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -104,8 +104,8 @@ func (c *sessionManagerClient) GetOneSOCKS5(ctx context.Context, in *SOCKS5Confi
 	return out, nil
 }
 
-func (c *sessionManagerClient) RefreshmDNSProxyList(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *sessionManagerClient) RefreshmDNSProxyList(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.SessionManager/RefreshmDNSProxyList", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -128,16 +128,16 @@ func (c *sessionManagerClient) GetAllTCP(ctx context.Context, in *SessionConfig,
 type SessionManagerServer interface {
 	// Sends a greeting
 	CreateOneSession(context.Context, *SessionConfig) (*SessionConfig, error)
-	DeleteOneSession(context.Context, *SessionConfig) (*Empty, error)
+	DeleteOneSession(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error)
 	GetOneSession(context.Context, *SessionConfig) (*SessionConfig, error)
-	GetAllSession(context.Context, *Empty) (*SessionList, error)
+	GetAllSession(context.Context, *OpenIoTHubEmpty) (*SessionList, error)
 	// Socks5
 	CreateOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error)
-	DeleteOneSOCKS5(context.Context, *SOCKS5Config) (*Empty, error)
+	DeleteOneSOCKS5(context.Context, *SOCKS5Config) (*OpenIoTHubEmpty, error)
 	GetOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error)
 	//:TODO  获取所有的设备列表
 	// mDNS刷新列表
-	RefreshmDNSProxyList(context.Context, *SessionConfig) (*Empty, error)
+	RefreshmDNSProxyList(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error)
 	// 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
 	GetAllTCP(context.Context, *SessionConfig) (*PortList, error)
 	mustEmbedUnimplementedSessionManagerServer()
@@ -150,25 +150,25 @@ type UnimplementedSessionManagerServer struct {
 func (UnimplementedSessionManagerServer) CreateOneSession(context.Context, *SessionConfig) (*SessionConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneSession not implemented")
 }
-func (UnimplementedSessionManagerServer) DeleteOneSession(context.Context, *SessionConfig) (*Empty, error) {
+func (UnimplementedSessionManagerServer) DeleteOneSession(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOneSession not implemented")
 }
 func (UnimplementedSessionManagerServer) GetOneSession(context.Context, *SessionConfig) (*SessionConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneSession not implemented")
 }
-func (UnimplementedSessionManagerServer) GetAllSession(context.Context, *Empty) (*SessionList, error) {
+func (UnimplementedSessionManagerServer) GetAllSession(context.Context, *OpenIoTHubEmpty) (*SessionList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllSession not implemented")
 }
 func (UnimplementedSessionManagerServer) CreateOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneSOCKS5 not implemented")
 }
-func (UnimplementedSessionManagerServer) DeleteOneSOCKS5(context.Context, *SOCKS5Config) (*Empty, error) {
+func (UnimplementedSessionManagerServer) DeleteOneSOCKS5(context.Context, *SOCKS5Config) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOneSOCKS5 not implemented")
 }
 func (UnimplementedSessionManagerServer) GetOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneSOCKS5 not implemented")
 }
-func (UnimplementedSessionManagerServer) RefreshmDNSProxyList(context.Context, *SessionConfig) (*Empty, error) {
+func (UnimplementedSessionManagerServer) RefreshmDNSProxyList(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshmDNSProxyList not implemented")
 }
 func (UnimplementedSessionManagerServer) GetAllTCP(context.Context, *SessionConfig) (*PortList, error) {
@@ -242,7 +242,7 @@ func _SessionManager_GetOneSession_Handler(srv interface{}, ctx context.Context,
 }
 
 func _SessionManager_GetAllSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(OpenIoTHubEmpty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -254,7 +254,7 @@ func _SessionManager_GetAllSession_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/pb.SessionManager/GetAllSession",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SessionManagerServer).GetAllSession(ctx, req.(*Empty))
+		return srv.(SessionManagerServer).GetAllSession(ctx, req.(*OpenIoTHubEmpty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -399,25 +399,25 @@ var _SessionManager_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommonDeviceManagerClient interface {
 	//设备的操作:增删
-	AddDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error)
-	DelDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error)
-	GetAllDevice(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*DeviceList, error)
+	AddDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
+	DelDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
+	GetAllDevice(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*DeviceList, error)
 	//网络唤醒
-	SetDeviceMac(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error)
-	WakeOnLAN(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error)
+	SetDeviceMac(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
+	WakeOnLAN(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	// TCP
 	CreateOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
-	DeleteOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error)
+	DeleteOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
 	GetAllTCP(ctx context.Context, in *Device, opts ...grpc.CallOption) (*PortList, error)
 	// UDP
 	CreateOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
-	DeleteOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error)
+	DeleteOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
 	GetAllUDP(ctx context.Context, in *Device, opts ...grpc.CallOption) (*PortList, error)
 	// FTP
 	CreateOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
-	DeleteOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error)
+	DeleteOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*PortConfig, error)
 	GetAllFTP(ctx context.Context, in *Device, opts ...grpc.CallOption) (*PortList, error)
 }
@@ -430,8 +430,8 @@ func NewCommonDeviceManagerClient(cc grpc.ClientConnInterface) CommonDeviceManag
 	return &commonDeviceManagerClient{cc}
 }
 
-func (c *commonDeviceManagerClient) AddDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) AddDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/AddDevice", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -439,8 +439,8 @@ func (c *commonDeviceManagerClient) AddDevice(ctx context.Context, in *Device, o
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) DelDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) DelDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/DelDevice", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -448,7 +448,7 @@ func (c *commonDeviceManagerClient) DelDevice(ctx context.Context, in *Device, o
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) GetAllDevice(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*DeviceList, error) {
+func (c *commonDeviceManagerClient) GetAllDevice(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*DeviceList, error) {
 	out := new(DeviceList)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/GetAllDevice", in, out, opts...)
 	if err != nil {
@@ -457,8 +457,8 @@ func (c *commonDeviceManagerClient) GetAllDevice(ctx context.Context, in *Empty,
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) SetDeviceMac(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) SetDeviceMac(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/SetDeviceMac", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -466,8 +466,8 @@ func (c *commonDeviceManagerClient) SetDeviceMac(ctx context.Context, in *Device
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) WakeOnLAN(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) WakeOnLAN(ctx context.Context, in *Device, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/WakeOnLAN", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -484,8 +484,8 @@ func (c *commonDeviceManagerClient) CreateOneTCP(ctx context.Context, in *PortCo
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) DeleteOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) DeleteOneTCP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/DeleteOneTCP", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -520,8 +520,8 @@ func (c *commonDeviceManagerClient) CreateOneUDP(ctx context.Context, in *PortCo
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) DeleteOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) DeleteOneUDP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/DeleteOneUDP", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -556,8 +556,8 @@ func (c *commonDeviceManagerClient) CreateOneFTP(ctx context.Context, in *PortCo
 	return out, nil
 }
 
-func (c *commonDeviceManagerClient) DeleteOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *commonDeviceManagerClient) DeleteOneFTP(ctx context.Context, in *PortConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.CommonDeviceManager/DeleteOneFTP", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -588,25 +588,25 @@ func (c *commonDeviceManagerClient) GetAllFTP(ctx context.Context, in *Device, o
 // for forward compatibility
 type CommonDeviceManagerServer interface {
 	//设备的操作:增删
-	AddDevice(context.Context, *Device) (*Empty, error)
-	DelDevice(context.Context, *Device) (*Empty, error)
-	GetAllDevice(context.Context, *Empty) (*DeviceList, error)
+	AddDevice(context.Context, *Device) (*OpenIoTHubEmpty, error)
+	DelDevice(context.Context, *Device) (*OpenIoTHubEmpty, error)
+	GetAllDevice(context.Context, *OpenIoTHubEmpty) (*DeviceList, error)
 	//网络唤醒
-	SetDeviceMac(context.Context, *Device) (*Empty, error)
-	WakeOnLAN(context.Context, *Device) (*Empty, error)
+	SetDeviceMac(context.Context, *Device) (*OpenIoTHubEmpty, error)
+	WakeOnLAN(context.Context, *Device) (*OpenIoTHubEmpty, error)
 	// TCP
 	CreateOneTCP(context.Context, *PortConfig) (*PortConfig, error)
-	DeleteOneTCP(context.Context, *PortConfig) (*Empty, error)
+	DeleteOneTCP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error)
 	GetOneTCP(context.Context, *PortConfig) (*PortConfig, error)
 	GetAllTCP(context.Context, *Device) (*PortList, error)
 	// UDP
 	CreateOneUDP(context.Context, *PortConfig) (*PortConfig, error)
-	DeleteOneUDP(context.Context, *PortConfig) (*Empty, error)
+	DeleteOneUDP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error)
 	GetOneUDP(context.Context, *PortConfig) (*PortConfig, error)
 	GetAllUDP(context.Context, *Device) (*PortList, error)
 	// FTP
 	CreateOneFTP(context.Context, *PortConfig) (*PortConfig, error)
-	DeleteOneFTP(context.Context, *PortConfig) (*Empty, error)
+	DeleteOneFTP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error)
 	GetOneFTP(context.Context, *PortConfig) (*PortConfig, error)
 	GetAllFTP(context.Context, *Device) (*PortList, error)
 	mustEmbedUnimplementedCommonDeviceManagerServer()
@@ -616,25 +616,25 @@ type CommonDeviceManagerServer interface {
 type UnimplementedCommonDeviceManagerServer struct {
 }
 
-func (UnimplementedCommonDeviceManagerServer) AddDevice(context.Context, *Device) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) AddDevice(context.Context, *Device) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddDevice not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) DelDevice(context.Context, *Device) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) DelDevice(context.Context, *Device) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DelDevice not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) GetAllDevice(context.Context, *Empty) (*DeviceList, error) {
+func (UnimplementedCommonDeviceManagerServer) GetAllDevice(context.Context, *OpenIoTHubEmpty) (*DeviceList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllDevice not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) SetDeviceMac(context.Context, *Device) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) SetDeviceMac(context.Context, *Device) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetDeviceMac not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) WakeOnLAN(context.Context, *Device) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) WakeOnLAN(context.Context, *Device) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WakeOnLAN not implemented")
 }
 func (UnimplementedCommonDeviceManagerServer) CreateOneTCP(context.Context, *PortConfig) (*PortConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneTCP not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) DeleteOneTCP(context.Context, *PortConfig) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) DeleteOneTCP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOneTCP not implemented")
 }
 func (UnimplementedCommonDeviceManagerServer) GetOneTCP(context.Context, *PortConfig) (*PortConfig, error) {
@@ -646,7 +646,7 @@ func (UnimplementedCommonDeviceManagerServer) GetAllTCP(context.Context, *Device
 func (UnimplementedCommonDeviceManagerServer) CreateOneUDP(context.Context, *PortConfig) (*PortConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneUDP not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) DeleteOneUDP(context.Context, *PortConfig) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) DeleteOneUDP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOneUDP not implemented")
 }
 func (UnimplementedCommonDeviceManagerServer) GetOneUDP(context.Context, *PortConfig) (*PortConfig, error) {
@@ -658,7 +658,7 @@ func (UnimplementedCommonDeviceManagerServer) GetAllUDP(context.Context, *Device
 func (UnimplementedCommonDeviceManagerServer) CreateOneFTP(context.Context, *PortConfig) (*PortConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneFTP not implemented")
 }
-func (UnimplementedCommonDeviceManagerServer) DeleteOneFTP(context.Context, *PortConfig) (*Empty, error) {
+func (UnimplementedCommonDeviceManagerServer) DeleteOneFTP(context.Context, *PortConfig) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOneFTP not implemented")
 }
 func (UnimplementedCommonDeviceManagerServer) GetOneFTP(context.Context, *PortConfig) (*PortConfig, error) {
@@ -717,7 +717,7 @@ func _CommonDeviceManager_DelDevice_Handler(srv interface{}, ctx context.Context
 }
 
 func _CommonDeviceManager_GetAllDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(OpenIoTHubEmpty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -729,7 +729,7 @@ func _CommonDeviceManager_GetAllDevice_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/pb.CommonDeviceManager/GetAllDevice",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommonDeviceManagerServer).GetAllDevice(ctx, req.(*Empty))
+		return srv.(CommonDeviceManagerServer).GetAllDevice(ctx, req.(*OpenIoTHubEmpty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1069,12 +1069,12 @@ var _CommonDeviceManager_serviceDesc = grpc.ServiceDesc{
 type UtilsClient interface {
 	//    让后台服务登录服务器并同步配置
 	SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error)
-	GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*StringValue, error)
-	LoadAllConfig(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*Empty, error)
-	GetAllmDNSServiceList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*MDNSServiceList, error)
-	GetmDNSServiceListByType(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*MDNSServiceList, error)
-	ConvertOctonaryUtf8(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*StringValue, error)
-	GetTokenModel(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*TokenModel, error)
+	GetAllConfig(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*OpenIoTHubStringValue, error)
+	LoadAllConfig(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
+	GetAllmDNSServiceList(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*MDNSServiceList, error)
+	GetmDNSServiceListByType(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*MDNSServiceList, error)
+	ConvertOctonaryUtf8(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*OpenIoTHubStringValue, error)
+	GetTokenModel(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*TokenModel, error)
 }
 
 type utilsClient struct {
@@ -1094,8 +1094,8 @@ func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *IoTManagerSer
 	return out, nil
 }
 
-func (c *utilsClient) GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*StringValue, error) {
-	out := new(StringValue)
+func (c *utilsClient) GetAllConfig(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*OpenIoTHubStringValue, error) {
+	out := new(OpenIoTHubStringValue)
 	err := c.cc.Invoke(ctx, "/pb.Utils/GetAllConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1103,8 +1103,8 @@ func (c *utilsClient) GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.
 	return out, nil
 }
 
-func (c *utilsClient) LoadAllConfig(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *utilsClient) LoadAllConfig(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error) {
+	out := new(OpenIoTHubEmpty)
 	err := c.cc.Invoke(ctx, "/pb.Utils/LoadAllConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1112,7 +1112,7 @@ func (c *utilsClient) LoadAllConfig(ctx context.Context, in *StringValue, opts .
 	return out, nil
 }
 
-func (c *utilsClient) GetAllmDNSServiceList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*MDNSServiceList, error) {
+func (c *utilsClient) GetAllmDNSServiceList(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*MDNSServiceList, error) {
 	out := new(MDNSServiceList)
 	err := c.cc.Invoke(ctx, "/pb.Utils/GetAllmDNSServiceList", in, out, opts...)
 	if err != nil {
@@ -1121,7 +1121,7 @@ func (c *utilsClient) GetAllmDNSServiceList(ctx context.Context, in *Empty, opts
 	return out, nil
 }
 
-func (c *utilsClient) GetmDNSServiceListByType(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*MDNSServiceList, error) {
+func (c *utilsClient) GetmDNSServiceListByType(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*MDNSServiceList, error) {
 	out := new(MDNSServiceList)
 	err := c.cc.Invoke(ctx, "/pb.Utils/GetmDNSServiceListByType", in, out, opts...)
 	if err != nil {
@@ -1130,8 +1130,8 @@ func (c *utilsClient) GetmDNSServiceListByType(ctx context.Context, in *StringVa
 	return out, nil
 }
 
-func (c *utilsClient) ConvertOctonaryUtf8(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*StringValue, error) {
-	out := new(StringValue)
+func (c *utilsClient) ConvertOctonaryUtf8(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*OpenIoTHubStringValue, error) {
+	out := new(OpenIoTHubStringValue)
 	err := c.cc.Invoke(ctx, "/pb.Utils/ConvertOctonaryUtf8", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1139,7 +1139,7 @@ func (c *utilsClient) ConvertOctonaryUtf8(ctx context.Context, in *StringValue, 
 	return out, nil
 }
 
-func (c *utilsClient) GetTokenModel(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*TokenModel, error) {
+func (c *utilsClient) GetTokenModel(ctx context.Context, in *OpenIoTHubStringValue, opts ...grpc.CallOption) (*TokenModel, error) {
 	out := new(TokenModel)
 	err := c.cc.Invoke(ctx, "/pb.Utils/GetTokenModel", in, out, opts...)
 	if err != nil {
@@ -1154,12 +1154,12 @@ func (c *utilsClient) GetTokenModel(ctx context.Context, in *StringValue, opts .
 type UtilsServer interface {
 	//    让后台服务登录服务器并同步配置
 	SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OpenIoTHubOperationResponse, error)
-	GetAllConfig(context.Context, *Empty) (*StringValue, error)
-	LoadAllConfig(context.Context, *StringValue) (*Empty, error)
-	GetAllmDNSServiceList(context.Context, *Empty) (*MDNSServiceList, error)
-	GetmDNSServiceListByType(context.Context, *StringValue) (*MDNSServiceList, error)
-	ConvertOctonaryUtf8(context.Context, *StringValue) (*StringValue, error)
-	GetTokenModel(context.Context, *StringValue) (*TokenModel, error)
+	GetAllConfig(context.Context, *OpenIoTHubEmpty) (*OpenIoTHubStringValue, error)
+	LoadAllConfig(context.Context, *OpenIoTHubStringValue) (*OpenIoTHubEmpty, error)
+	GetAllmDNSServiceList(context.Context, *OpenIoTHubEmpty) (*MDNSServiceList, error)
+	GetmDNSServiceListByType(context.Context, *OpenIoTHubStringValue) (*MDNSServiceList, error)
+	ConvertOctonaryUtf8(context.Context, *OpenIoTHubStringValue) (*OpenIoTHubStringValue, error)
+	GetTokenModel(context.Context, *OpenIoTHubStringValue) (*TokenModel, error)
 	mustEmbedUnimplementedUtilsServer()
 }
 
@@ -1170,22 +1170,22 @@ type UnimplementedUtilsServer struct {
 func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OpenIoTHubOperationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SyncConfigWithToken not implemented")
 }
-func (UnimplementedUtilsServer) GetAllConfig(context.Context, *Empty) (*StringValue, error) {
+func (UnimplementedUtilsServer) GetAllConfig(context.Context, *OpenIoTHubEmpty) (*OpenIoTHubStringValue, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllConfig not implemented")
 }
-func (UnimplementedUtilsServer) LoadAllConfig(context.Context, *StringValue) (*Empty, error) {
+func (UnimplementedUtilsServer) LoadAllConfig(context.Context, *OpenIoTHubStringValue) (*OpenIoTHubEmpty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LoadAllConfig not implemented")
 }
-func (UnimplementedUtilsServer) GetAllmDNSServiceList(context.Context, *Empty) (*MDNSServiceList, error) {
+func (UnimplementedUtilsServer) GetAllmDNSServiceList(context.Context, *OpenIoTHubEmpty) (*MDNSServiceList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllmDNSServiceList not implemented")
 }
-func (UnimplementedUtilsServer) GetmDNSServiceListByType(context.Context, *StringValue) (*MDNSServiceList, error) {
+func (UnimplementedUtilsServer) GetmDNSServiceListByType(context.Context, *OpenIoTHubStringValue) (*MDNSServiceList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetmDNSServiceListByType not implemented")
 }
-func (UnimplementedUtilsServer) ConvertOctonaryUtf8(context.Context, *StringValue) (*StringValue, error) {
+func (UnimplementedUtilsServer) ConvertOctonaryUtf8(context.Context, *OpenIoTHubStringValue) (*OpenIoTHubStringValue, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvertOctonaryUtf8 not implemented")
 }
-func (UnimplementedUtilsServer) GetTokenModel(context.Context, *StringValue) (*TokenModel, error) {
+func (UnimplementedUtilsServer) GetTokenModel(context.Context, *OpenIoTHubStringValue) (*TokenModel, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokenModel not implemented")
 }
 func (UnimplementedUtilsServer) mustEmbedUnimplementedUtilsServer() {}
@@ -1220,7 +1220,7 @@ func _Utils_SyncConfigWithToken_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _Utils_GetAllConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(OpenIoTHubEmpty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1232,13 +1232,13 @@ func _Utils_GetAllConfig_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/pb.Utils/GetAllConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).GetAllConfig(ctx, req.(*Empty))
+		return srv.(UtilsServer).GetAllConfig(ctx, req.(*OpenIoTHubEmpty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_LoadAllConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
+	in := new(OpenIoTHubStringValue)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1250,13 +1250,13 @@ func _Utils_LoadAllConfig_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/pb.Utils/LoadAllConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).LoadAllConfig(ctx, req.(*StringValue))
+		return srv.(UtilsServer).LoadAllConfig(ctx, req.(*OpenIoTHubStringValue))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_GetAllmDNSServiceList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(OpenIoTHubEmpty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1268,13 +1268,13 @@ func _Utils_GetAllmDNSServiceList_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/pb.Utils/GetAllmDNSServiceList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).GetAllmDNSServiceList(ctx, req.(*Empty))
+		return srv.(UtilsServer).GetAllmDNSServiceList(ctx, req.(*OpenIoTHubEmpty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_GetmDNSServiceListByType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
+	in := new(OpenIoTHubStringValue)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1286,13 +1286,13 @@ func _Utils_GetmDNSServiceListByType_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/pb.Utils/GetmDNSServiceListByType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).GetmDNSServiceListByType(ctx, req.(*StringValue))
+		return srv.(UtilsServer).GetmDNSServiceListByType(ctx, req.(*OpenIoTHubStringValue))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_ConvertOctonaryUtf8_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
+	in := new(OpenIoTHubStringValue)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1304,13 +1304,13 @@ func _Utils_ConvertOctonaryUtf8_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/pb.Utils/ConvertOctonaryUtf8",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).ConvertOctonaryUtf8(ctx, req.(*StringValue))
+		return srv.(UtilsServer).ConvertOctonaryUtf8(ctx, req.(*OpenIoTHubStringValue))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_GetTokenModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
+	in := new(OpenIoTHubStringValue)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1322,7 +1322,7 @@ func _Utils_GetTokenModel_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/pb.Utils/GetTokenModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).GetTokenModel(ctx, req.(*StringValue))
+		return srv.(UtilsServer).GetTokenModel(ctx, req.(*OpenIoTHubStringValue))
 	}
 	return interceptor(ctx, in, info, handler)
 }

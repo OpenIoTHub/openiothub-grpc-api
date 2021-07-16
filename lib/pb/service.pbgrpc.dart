@@ -20,39 +20,43 @@ class SessionManagerClient extends $grpc.Client {
           ($0.SessionConfig value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value));
   static final _$deleteOneSession =
-      $grpc.ClientMethod<$0.SessionConfig, $0.Empty>(
+      $grpc.ClientMethod<$0.SessionConfig, $0.OpenIoTHubEmpty>(
           '/pb.SessionManager/DeleteOneSession',
           ($0.SessionConfig value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getOneSession =
       $grpc.ClientMethod<$0.SessionConfig, $0.SessionConfig>(
           '/pb.SessionManager/GetOneSession',
           ($0.SessionConfig value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value));
-  static final _$getAllSession = $grpc.ClientMethod<$0.Empty, $0.SessionList>(
-      '/pb.SessionManager/GetAllSession',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.SessionList.fromBuffer(value));
+  static final _$getAllSession =
+      $grpc.ClientMethod<$0.OpenIoTHubEmpty, $0.SessionList>(
+          '/pb.SessionManager/GetAllSession',
+          ($0.OpenIoTHubEmpty value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.SessionList.fromBuffer(value));
   static final _$createOneSOCKS5 =
       $grpc.ClientMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
           '/pb.SessionManager/CreateOneSOCKS5',
           ($0.SOCKS5Config value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.SOCKS5Config.fromBuffer(value));
   static final _$deleteOneSOCKS5 =
-      $grpc.ClientMethod<$0.SOCKS5Config, $0.Empty>(
+      $grpc.ClientMethod<$0.SOCKS5Config, $0.OpenIoTHubEmpty>(
           '/pb.SessionManager/DeleteOneSOCKS5',
           ($0.SOCKS5Config value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getOneSOCKS5 =
       $grpc.ClientMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
           '/pb.SessionManager/GetOneSOCKS5',
           ($0.SOCKS5Config value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.SOCKS5Config.fromBuffer(value));
   static final _$refreshmDNSProxyList =
-      $grpc.ClientMethod<$0.SessionConfig, $0.Empty>(
+      $grpc.ClientMethod<$0.SessionConfig, $0.OpenIoTHubEmpty>(
           '/pb.SessionManager/RefreshmDNSProxyList',
           ($0.SessionConfig value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getAllTCP = $grpc.ClientMethod<$0.SessionConfig, $0.PortList>(
       '/pb.SessionManager/GetAllTCP',
       ($0.SessionConfig value) => value.writeToBuffer(),
@@ -70,7 +74,8 @@ class SessionManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> deleteOneSession($0.SessionConfig request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneSession(
+      $0.SessionConfig request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$deleteOneSession, $async.Stream.fromIterable([request]),
@@ -86,7 +91,7 @@ class SessionManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.SessionList> getAllSession($0.Empty request,
+  $grpc.ResponseFuture<$0.SessionList> getAllSession($0.OpenIoTHubEmpty request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getAllSession, $async.Stream.fromIterable([request]),
@@ -102,7 +107,8 @@ class SessionManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> deleteOneSOCKS5($0.SOCKS5Config request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneSOCKS5(
+      $0.SOCKS5Config request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$deleteOneSOCKS5, $async.Stream.fromIterable([request]),
@@ -118,7 +124,8 @@ class SessionManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> refreshmDNSProxyList($0.SessionConfig request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> refreshmDNSProxyList(
+      $0.SessionConfig request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$refreshmDNSProxyList, $async.Stream.fromIterable([request]),
@@ -145,13 +152,13 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
         ($0.SessionConfig value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.OpenIoTHubEmpty>(
         'DeleteOneSession',
         deleteOneSession_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.SessionConfig>(
         'GetOneSession',
         getOneSession_Pre,
@@ -159,12 +166,12 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
         ($0.SessionConfig value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.SessionList>(
+    $addMethod($grpc.ServiceMethod<$0.OpenIoTHubEmpty, $0.SessionList>(
         'GetAllSession',
         getAllSession_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value),
         ($0.SessionList value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
         'CreateOneSOCKS5',
@@ -173,13 +180,13 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SOCKS5Config.fromBuffer(value),
         ($0.SOCKS5Config value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SOCKS5Config, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.SOCKS5Config, $0.OpenIoTHubEmpty>(
         'DeleteOneSOCKS5',
         deleteOneSOCKS5_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.SOCKS5Config.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
         'GetOneSOCKS5',
         getOneSOCKS5_Pre,
@@ -187,13 +194,13 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SOCKS5Config.fromBuffer(value),
         ($0.SOCKS5Config value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.OpenIoTHubEmpty>(
         'RefreshmDNSProxyList',
         refreshmDNSProxyList_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.PortList>(
         'GetAllTCP',
         getAllTCP_Pre,
@@ -208,7 +215,7 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
     return createOneSession(call, await request);
   }
 
-  $async.Future<$0.Empty> deleteOneSession_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneSession_Pre(
       $grpc.ServiceCall call, $async.Future<$0.SessionConfig> request) async {
     return deleteOneSession(call, await request);
   }
@@ -219,7 +226,7 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SessionList> getAllSession_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+      $grpc.ServiceCall call, $async.Future<$0.OpenIoTHubEmpty> request) async {
     return getAllSession(call, await request);
   }
 
@@ -228,7 +235,7 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
     return createOneSOCKS5(call, await request);
   }
 
-  $async.Future<$0.Empty> deleteOneSOCKS5_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneSOCKS5_Pre(
       $grpc.ServiceCall call, $async.Future<$0.SOCKS5Config> request) async {
     return deleteOneSOCKS5(call, await request);
   }
@@ -238,7 +245,7 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
     return getOneSOCKS5(call, await request);
   }
 
-  $async.Future<$0.Empty> refreshmDNSProxyList_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> refreshmDNSProxyList_Pre(
       $grpc.ServiceCall call, $async.Future<$0.SessionConfig> request) async {
     return refreshmDNSProxyList(call, await request);
   }
@@ -250,54 +257,59 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
 
   $async.Future<$0.SessionConfig> createOneSession(
       $grpc.ServiceCall call, $0.SessionConfig request);
-  $async.Future<$0.Empty> deleteOneSession(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneSession(
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.SessionConfig> getOneSession(
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.SessionList> getAllSession(
-      $grpc.ServiceCall call, $0.Empty request);
+      $grpc.ServiceCall call, $0.OpenIoTHubEmpty request);
   $async.Future<$0.SOCKS5Config> createOneSOCKS5(
       $grpc.ServiceCall call, $0.SOCKS5Config request);
-  $async.Future<$0.Empty> deleteOneSOCKS5(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneSOCKS5(
       $grpc.ServiceCall call, $0.SOCKS5Config request);
   $async.Future<$0.SOCKS5Config> getOneSOCKS5(
       $grpc.ServiceCall call, $0.SOCKS5Config request);
-  $async.Future<$0.Empty> refreshmDNSProxyList(
+  $async.Future<$0.OpenIoTHubEmpty> refreshmDNSProxyList(
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.PortList> getAllTCP(
       $grpc.ServiceCall call, $0.SessionConfig request);
 }
 
 class CommonDeviceManagerClient extends $grpc.Client {
-  static final _$addDevice = $grpc.ClientMethod<$0.Device, $0.Empty>(
+  static final _$addDevice = $grpc.ClientMethod<$0.Device, $0.OpenIoTHubEmpty>(
       '/pb.CommonDeviceManager/AddDevice',
       ($0.Device value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-  static final _$delDevice = $grpc.ClientMethod<$0.Device, $0.Empty>(
+      ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value));
+  static final _$delDevice = $grpc.ClientMethod<$0.Device, $0.OpenIoTHubEmpty>(
       '/pb.CommonDeviceManager/DelDevice',
       ($0.Device value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-  static final _$getAllDevice = $grpc.ClientMethod<$0.Empty, $0.DeviceList>(
-      '/pb.CommonDeviceManager/GetAllDevice',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.DeviceList.fromBuffer(value));
-  static final _$setDeviceMac = $grpc.ClientMethod<$0.Device, $0.Empty>(
-      '/pb.CommonDeviceManager/SetDeviceMac',
-      ($0.Device value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-  static final _$wakeOnLAN = $grpc.ClientMethod<$0.Device, $0.Empty>(
+      ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value));
+  static final _$getAllDevice =
+      $grpc.ClientMethod<$0.OpenIoTHubEmpty, $0.DeviceList>(
+          '/pb.CommonDeviceManager/GetAllDevice',
+          ($0.OpenIoTHubEmpty value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.DeviceList.fromBuffer(value));
+  static final _$setDeviceMac =
+      $grpc.ClientMethod<$0.Device, $0.OpenIoTHubEmpty>(
+          '/pb.CommonDeviceManager/SetDeviceMac',
+          ($0.Device value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
+  static final _$wakeOnLAN = $grpc.ClientMethod<$0.Device, $0.OpenIoTHubEmpty>(
       '/pb.CommonDeviceManager/WakeOnLAN',
       ($0.Device value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+      ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$createOneTCP =
       $grpc.ClientMethod<$0.PortConfig, $0.PortConfig>(
           '/pb.CommonDeviceManager/CreateOneTCP',
           ($0.PortConfig value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value));
-  static final _$deleteOneTCP = $grpc.ClientMethod<$0.PortConfig, $0.Empty>(
-      '/pb.CommonDeviceManager/DeleteOneTCP',
-      ($0.PortConfig value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$deleteOneTCP =
+      $grpc.ClientMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
+          '/pb.CommonDeviceManager/DeleteOneTCP',
+          ($0.PortConfig value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getOneTCP = $grpc.ClientMethod<$0.PortConfig, $0.PortConfig>(
       '/pb.CommonDeviceManager/GetOneTCP',
       ($0.PortConfig value) => value.writeToBuffer(),
@@ -311,10 +323,12 @@ class CommonDeviceManagerClient extends $grpc.Client {
           '/pb.CommonDeviceManager/CreateOneUDP',
           ($0.PortConfig value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value));
-  static final _$deleteOneUDP = $grpc.ClientMethod<$0.PortConfig, $0.Empty>(
-      '/pb.CommonDeviceManager/DeleteOneUDP',
-      ($0.PortConfig value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$deleteOneUDP =
+      $grpc.ClientMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
+          '/pb.CommonDeviceManager/DeleteOneUDP',
+          ($0.PortConfig value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getOneUDP = $grpc.ClientMethod<$0.PortConfig, $0.PortConfig>(
       '/pb.CommonDeviceManager/GetOneUDP',
       ($0.PortConfig value) => value.writeToBuffer(),
@@ -328,10 +342,12 @@ class CommonDeviceManagerClient extends $grpc.Client {
           '/pb.CommonDeviceManager/CreateOneFTP',
           ($0.PortConfig value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value));
-  static final _$deleteOneFTP = $grpc.ClientMethod<$0.PortConfig, $0.Empty>(
-      '/pb.CommonDeviceManager/DeleteOneFTP',
-      ($0.PortConfig value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$deleteOneFTP =
+      $grpc.ClientMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
+          '/pb.CommonDeviceManager/DeleteOneFTP',
+          ($0.PortConfig value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getOneFTP = $grpc.ClientMethod<$0.PortConfig, $0.PortConfig>(
       '/pb.CommonDeviceManager/GetOneFTP',
       ($0.PortConfig value) => value.writeToBuffer(),
@@ -345,21 +361,21 @@ class CommonDeviceManagerClient extends $grpc.Client {
       {$grpc.CallOptions options})
       : super(channel, options: options);
 
-  $grpc.ResponseFuture<$0.Empty> addDevice($0.Device request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> addDevice($0.Device request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$addDevice, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> delDevice($0.Device request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> delDevice($0.Device request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$delDevice, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.DeviceList> getAllDevice($0.Empty request,
+  $grpc.ResponseFuture<$0.DeviceList> getAllDevice($0.OpenIoTHubEmpty request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getAllDevice, $async.Stream.fromIterable([request]),
@@ -367,7 +383,7 @@ class CommonDeviceManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> setDeviceMac($0.Device request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> setDeviceMac($0.Device request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$setDeviceMac, $async.Stream.fromIterable([request]),
@@ -375,7 +391,7 @@ class CommonDeviceManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> wakeOnLAN($0.Device request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> wakeOnLAN($0.Device request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$wakeOnLAN, $async.Stream.fromIterable([request]),
         options: options);
@@ -390,7 +406,7 @@ class CommonDeviceManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> deleteOneTCP($0.PortConfig request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneTCP($0.PortConfig request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$deleteOneTCP, $async.Stream.fromIterable([request]),
@@ -420,7 +436,7 @@ class CommonDeviceManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> deleteOneUDP($0.PortConfig request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneUDP($0.PortConfig request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$deleteOneUDP, $async.Stream.fromIterable([request]),
@@ -450,7 +466,7 @@ class CommonDeviceManagerClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> deleteOneFTP($0.PortConfig request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneFTP($0.PortConfig request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$deleteOneFTP, $async.Stream.fromIterable([request]),
@@ -477,41 +493,41 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
   $core.String get $name => 'pb.CommonDeviceManager';
 
   CommonDeviceManagerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Device, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.Device, $0.OpenIoTHubEmpty>(
         'AddDevice',
         addDevice_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Device.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Device, $0.Empty>(
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Device, $0.OpenIoTHubEmpty>(
         'DelDevice',
         delDevice_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Device.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.DeviceList>(
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.OpenIoTHubEmpty, $0.DeviceList>(
         'GetAllDevice',
         getAllDevice_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value),
         ($0.DeviceList value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Device, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.Device, $0.OpenIoTHubEmpty>(
         'SetDeviceMac',
         setDeviceMac_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Device.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Device, $0.Empty>(
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Device, $0.OpenIoTHubEmpty>(
         'WakeOnLAN',
         wakeOnLAN_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Device.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.PortConfig>(
         'CreateOneTCP',
         createOneTCP_Pre,
@@ -519,13 +535,13 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
         ($0.PortConfig value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
         'DeleteOneTCP',
         deleteOneTCP_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.PortConfig>(
         'GetOneTCP',
         getOneTCP_Pre,
@@ -547,13 +563,13 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
         ($0.PortConfig value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
         'DeleteOneUDP',
         deleteOneUDP_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.PortConfig>(
         'GetOneUDP',
         getOneUDP_Pre,
@@ -575,13 +591,13 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
         ($0.PortConfig value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.OpenIoTHubEmpty>(
         'DeleteOneFTP',
         deleteOneFTP_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.PortConfig.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PortConfig, $0.PortConfig>(
         'GetOneFTP',
         getOneFTP_Pre,
@@ -598,27 +614,27 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
         ($0.PortList value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Empty> addDevice_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> addDevice_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Device> request) async {
     return addDevice(call, await request);
   }
 
-  $async.Future<$0.Empty> delDevice_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> delDevice_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Device> request) async {
     return delDevice(call, await request);
   }
 
   $async.Future<$0.DeviceList> getAllDevice_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+      $grpc.ServiceCall call, $async.Future<$0.OpenIoTHubEmpty> request) async {
     return getAllDevice(call, await request);
   }
 
-  $async.Future<$0.Empty> setDeviceMac_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> setDeviceMac_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Device> request) async {
     return setDeviceMac(call, await request);
   }
 
-  $async.Future<$0.Empty> wakeOnLAN_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> wakeOnLAN_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Device> request) async {
     return wakeOnLAN(call, await request);
   }
@@ -628,7 +644,7 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
     return createOneTCP(call, await request);
   }
 
-  $async.Future<$0.Empty> deleteOneTCP_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneTCP_Pre(
       $grpc.ServiceCall call, $async.Future<$0.PortConfig> request) async {
     return deleteOneTCP(call, await request);
   }
@@ -648,7 +664,7 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
     return createOneUDP(call, await request);
   }
 
-  $async.Future<$0.Empty> deleteOneUDP_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneUDP_Pre(
       $grpc.ServiceCall call, $async.Future<$0.PortConfig> request) async {
     return deleteOneUDP(call, await request);
   }
@@ -668,7 +684,7 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
     return createOneFTP(call, await request);
   }
 
-  $async.Future<$0.Empty> deleteOneFTP_Pre(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneFTP_Pre(
       $grpc.ServiceCall call, $async.Future<$0.PortConfig> request) async {
     return deleteOneFTP(call, await request);
   }
@@ -683,16 +699,19 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
     return getAllFTP(call, await request);
   }
 
-  $async.Future<$0.Empty> addDevice($grpc.ServiceCall call, $0.Device request);
-  $async.Future<$0.Empty> delDevice($grpc.ServiceCall call, $0.Device request);
-  $async.Future<$0.DeviceList> getAllDevice(
-      $grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$0.Empty> setDeviceMac(
+  $async.Future<$0.OpenIoTHubEmpty> addDevice(
       $grpc.ServiceCall call, $0.Device request);
-  $async.Future<$0.Empty> wakeOnLAN($grpc.ServiceCall call, $0.Device request);
+  $async.Future<$0.OpenIoTHubEmpty> delDevice(
+      $grpc.ServiceCall call, $0.Device request);
+  $async.Future<$0.DeviceList> getAllDevice(
+      $grpc.ServiceCall call, $0.OpenIoTHubEmpty request);
+  $async.Future<$0.OpenIoTHubEmpty> setDeviceMac(
+      $grpc.ServiceCall call, $0.Device request);
+  $async.Future<$0.OpenIoTHubEmpty> wakeOnLAN(
+      $grpc.ServiceCall call, $0.Device request);
   $async.Future<$0.PortConfig> createOneTCP(
       $grpc.ServiceCall call, $0.PortConfig request);
-  $async.Future<$0.Empty> deleteOneTCP(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneTCP(
       $grpc.ServiceCall call, $0.PortConfig request);
   $async.Future<$0.PortConfig> getOneTCP(
       $grpc.ServiceCall call, $0.PortConfig request);
@@ -700,7 +719,7 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.Device request);
   $async.Future<$0.PortConfig> createOneUDP(
       $grpc.ServiceCall call, $0.PortConfig request);
-  $async.Future<$0.Empty> deleteOneUDP(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneUDP(
       $grpc.ServiceCall call, $0.PortConfig request);
   $async.Future<$0.PortConfig> getOneUDP(
       $grpc.ServiceCall call, $0.PortConfig request);
@@ -708,7 +727,7 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.Device request);
   $async.Future<$0.PortConfig> createOneFTP(
       $grpc.ServiceCall call, $0.PortConfig request);
-  $async.Future<$0.Empty> deleteOneFTP(
+  $async.Future<$0.OpenIoTHubEmpty> deleteOneFTP(
       $grpc.ServiceCall call, $0.PortConfig request);
   $async.Future<$0.PortConfig> getOneFTP(
       $grpc.ServiceCall call, $0.PortConfig request);
@@ -723,35 +742,40 @@ class UtilsClient extends $grpc.Client {
       ($0.IoTManagerServerAndToken value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.OpenIoTHubOperationResponse.fromBuffer(value));
-  static final _$getAllConfig = $grpc.ClientMethod<$0.Empty, $0.StringValue>(
-      '/pb.Utils/GetAllConfig',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value));
-  static final _$loadAllConfig = $grpc.ClientMethod<$0.StringValue, $0.Empty>(
-      '/pb.Utils/LoadAllConfig',
-      ($0.StringValue value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$getAllConfig =
+      $grpc.ClientMethod<$0.OpenIoTHubEmpty, $0.OpenIoTHubStringValue>(
+          '/pb.Utils/GetAllConfig',
+          ($0.OpenIoTHubEmpty value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubStringValue.fromBuffer(value));
+  static final _$loadAllConfig =
+      $grpc.ClientMethod<$0.OpenIoTHubStringValue, $0.OpenIoTHubEmpty>(
+          '/pb.Utils/LoadAllConfig',
+          ($0.OpenIoTHubStringValue value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubEmpty.fromBuffer(value));
   static final _$getAllmDNSServiceList =
-      $grpc.ClientMethod<$0.Empty, $0.MDNSServiceList>(
+      $grpc.ClientMethod<$0.OpenIoTHubEmpty, $0.MDNSServiceList>(
           '/pb.Utils/GetAllmDNSServiceList',
-          ($0.Empty value) => value.writeToBuffer(),
+          ($0.OpenIoTHubEmpty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MDNSServiceList.fromBuffer(value));
   static final _$getmDNSServiceListByType =
-      $grpc.ClientMethod<$0.StringValue, $0.MDNSServiceList>(
+      $grpc.ClientMethod<$0.OpenIoTHubStringValue, $0.MDNSServiceList>(
           '/pb.Utils/GetmDNSServiceListByType',
-          ($0.StringValue value) => value.writeToBuffer(),
+          ($0.OpenIoTHubStringValue value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.MDNSServiceList.fromBuffer(value));
   static final _$convertOctonaryUtf8 =
-      $grpc.ClientMethod<$0.StringValue, $0.StringValue>(
+      $grpc.ClientMethod<$0.OpenIoTHubStringValue, $0.OpenIoTHubStringValue>(
           '/pb.Utils/ConvertOctonaryUtf8',
-          ($0.StringValue value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value));
+          ($0.OpenIoTHubStringValue value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubStringValue.fromBuffer(value));
   static final _$getTokenModel =
-      $grpc.ClientMethod<$0.StringValue, $0.TokenModel>(
+      $grpc.ClientMethod<$0.OpenIoTHubStringValue, $0.TokenModel>(
           '/pb.Utils/GetTokenModel',
-          ($0.StringValue value) => value.writeToBuffer(),
+          ($0.OpenIoTHubStringValue value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.TokenModel.fromBuffer(value));
 
   UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
@@ -766,7 +790,8 @@ class UtilsClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.StringValue> getAllConfig($0.Empty request,
+  $grpc.ResponseFuture<$0.OpenIoTHubStringValue> getAllConfig(
+      $0.OpenIoTHubEmpty request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getAllConfig, $async.Stream.fromIterable([request]),
@@ -774,7 +799,8 @@ class UtilsClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Empty> loadAllConfig($0.StringValue request,
+  $grpc.ResponseFuture<$0.OpenIoTHubEmpty> loadAllConfig(
+      $0.OpenIoTHubStringValue request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$loadAllConfig, $async.Stream.fromIterable([request]),
@@ -783,7 +809,7 @@ class UtilsClient extends $grpc.Client {
   }
 
   $grpc.ResponseFuture<$0.MDNSServiceList> getAllmDNSServiceList(
-      $0.Empty request,
+      $0.OpenIoTHubEmpty request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getAllmDNSServiceList, $async.Stream.fromIterable([request]),
@@ -792,7 +818,7 @@ class UtilsClient extends $grpc.Client {
   }
 
   $grpc.ResponseFuture<$0.MDNSServiceList> getmDNSServiceListByType(
-      $0.StringValue request,
+      $0.OpenIoTHubStringValue request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getmDNSServiceListByType, $async.Stream.fromIterable([request]),
@@ -800,8 +826,8 @@ class UtilsClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.StringValue> convertOctonaryUtf8(
-      $0.StringValue request,
+  $grpc.ResponseFuture<$0.OpenIoTHubStringValue> convertOctonaryUtf8(
+      $0.OpenIoTHubStringValue request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$convertOctonaryUtf8, $async.Stream.fromIterable([request]),
@@ -809,7 +835,8 @@ class UtilsClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.TokenModel> getTokenModel($0.StringValue request,
+  $grpc.ResponseFuture<$0.TokenModel> getTokenModel(
+      $0.OpenIoTHubStringValue request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getTokenModel, $async.Stream.fromIterable([request]),
@@ -831,47 +858,56 @@ abstract class UtilsServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.IoTManagerServerAndToken.fromBuffer(value),
         ($0.OpenIoTHubOperationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.StringValue>(
-        'GetAllConfig',
-        getAllConfig_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($0.StringValue value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.Empty>(
-        'LoadAllConfig',
-        loadAllConfig_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.MDNSServiceList>(
+    $addMethod(
+        $grpc.ServiceMethod<$0.OpenIoTHubEmpty, $0.OpenIoTHubStringValue>(
+            'GetAllConfig',
+            getAllConfig_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.OpenIoTHubEmpty.fromBuffer(value),
+            ($0.OpenIoTHubStringValue value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.OpenIoTHubStringValue, $0.OpenIoTHubEmpty>(
+            'LoadAllConfig',
+            loadAllConfig_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.OpenIoTHubStringValue.fromBuffer(value),
+            ($0.OpenIoTHubEmpty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.OpenIoTHubEmpty, $0.MDNSServiceList>(
         'GetAllmDNSServiceList',
         getAllmDNSServiceList_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value),
         ($0.MDNSServiceList value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.MDNSServiceList>(
-        'GetmDNSServiceListByType',
-        getmDNSServiceListByType_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
-        ($0.MDNSServiceList value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.StringValue>(
-        'ConvertOctonaryUtf8',
-        convertOctonaryUtf8_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
-        ($0.StringValue value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.TokenModel>(
+    $addMethod(
+        $grpc.ServiceMethod<$0.OpenIoTHubStringValue, $0.MDNSServiceList>(
+            'GetmDNSServiceListByType',
+            getmDNSServiceListByType_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.OpenIoTHubStringValue.fromBuffer(value),
+            ($0.MDNSServiceList value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.OpenIoTHubStringValue, $0.OpenIoTHubStringValue>(
+            'ConvertOctonaryUtf8',
+            convertOctonaryUtf8_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.OpenIoTHubStringValue.fromBuffer(value),
+            ($0.OpenIoTHubStringValue value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.OpenIoTHubStringValue, $0.TokenModel>(
         'GetTokenModel',
         getTokenModel_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
+        ($core.List<$core.int> value) =>
+            $0.OpenIoTHubStringValue.fromBuffer(value),
         ($0.TokenModel value) => value.writeToBuffer()));
   }
 
@@ -881,48 +917,50 @@ abstract class UtilsServiceBase extends $grpc.Service {
     return syncConfigWithToken(call, await request);
   }
 
-  $async.Future<$0.StringValue> getAllConfig_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$0.OpenIoTHubStringValue> getAllConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.OpenIoTHubEmpty> request) async {
     return getAllConfig(call, await request);
   }
 
-  $async.Future<$0.Empty> loadAllConfig_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+  $async.Future<$0.OpenIoTHubEmpty> loadAllConfig_Pre($grpc.ServiceCall call,
+      $async.Future<$0.OpenIoTHubStringValue> request) async {
     return loadAllConfig(call, await request);
   }
 
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+      $grpc.ServiceCall call, $async.Future<$0.OpenIoTHubEmpty> request) async {
     return getAllmDNSServiceList(call, await request);
   }
 
   $async.Future<$0.MDNSServiceList> getmDNSServiceListByType_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+      $grpc.ServiceCall call,
+      $async.Future<$0.OpenIoTHubStringValue> request) async {
     return getmDNSServiceListByType(call, await request);
   }
 
-  $async.Future<$0.StringValue> convertOctonaryUtf8_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+  $async.Future<$0.OpenIoTHubStringValue> convertOctonaryUtf8_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.OpenIoTHubStringValue> request) async {
     return convertOctonaryUtf8(call, await request);
   }
 
-  $async.Future<$0.TokenModel> getTokenModel_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
+  $async.Future<$0.TokenModel> getTokenModel_Pre($grpc.ServiceCall call,
+      $async.Future<$0.OpenIoTHubStringValue> request) async {
     return getTokenModel(call, await request);
   }
 
   $async.Future<$0.OpenIoTHubOperationResponse> syncConfigWithToken(
       $grpc.ServiceCall call, $0.IoTManagerServerAndToken request);
-  $async.Future<$0.StringValue> getAllConfig(
-      $grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$0.Empty> loadAllConfig(
-      $grpc.ServiceCall call, $0.StringValue request);
+  $async.Future<$0.OpenIoTHubStringValue> getAllConfig(
+      $grpc.ServiceCall call, $0.OpenIoTHubEmpty request);
+  $async.Future<$0.OpenIoTHubEmpty> loadAllConfig(
+      $grpc.ServiceCall call, $0.OpenIoTHubStringValue request);
   $async.Future<$0.MDNSServiceList> getAllmDNSServiceList(
-      $grpc.ServiceCall call, $0.Empty request);
+      $grpc.ServiceCall call, $0.OpenIoTHubEmpty request);
   $async.Future<$0.MDNSServiceList> getmDNSServiceListByType(
-      $grpc.ServiceCall call, $0.StringValue request);
-  $async.Future<$0.StringValue> convertOctonaryUtf8(
-      $grpc.ServiceCall call, $0.StringValue request);
+      $grpc.ServiceCall call, $0.OpenIoTHubStringValue request);
+  $async.Future<$0.OpenIoTHubStringValue> convertOctonaryUtf8(
+      $grpc.ServiceCall call, $0.OpenIoTHubStringValue request);
   $async.Future<$0.TokenModel> getTokenModel(
-      $grpc.ServiceCall call, $0.StringValue request);
+      $grpc.ServiceCall call, $0.OpenIoTHubStringValue request);
 }
