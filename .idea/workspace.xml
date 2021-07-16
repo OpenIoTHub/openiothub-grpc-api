@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="添加登录和同步配置接口">
+    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,17 +133,18 @@
     <MESSAGE value="update:添加获取配置和加载配置的接口" />
     <MESSAGE value="update" />
     <MESSAGE value="添加登录和同步配置接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加登录和同步配置接口" />
+    <MESSAGE value="同步配置接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步配置接口" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626416380633">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626416402952">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626416380633" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626416402952" />
     <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
