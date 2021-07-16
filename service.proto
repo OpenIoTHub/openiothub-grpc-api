@@ -147,7 +147,6 @@ service CommonDeviceManager {
 
 service Utils {
 //    让后台服务登录服务器并同步配置
-    rpc LoginServerWithToken (StringValue) returns (OperationResponse) {}
     rpc SyncConfigWithToken (StringValue) returns (OperationResponse) {}
 
     rpc GetAllConfig (Empty) returns (StringValue) {}

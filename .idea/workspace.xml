@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
+    <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="添加登录和同步配置接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pb/service.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pb/service.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb-go/service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publib.sh" beforeDir="false" afterPath="$PROJECT_DIR$/publib.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,26 +131,25 @@
     <MESSAGE value="rename project;&#10;remove server grpc api" />
     <MESSAGE value="update:添加获取配置和加载配置的接口" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="添加登录和同步配置接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加登录和同步配置接口" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1623246038094">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626416380633">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1623246038094" />
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.988@0.25.1680.988" timestamp="1617611469175" />
-    <state x="162" y="114" key="DiffContextDialog" timestamp="1623243750719">
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626416380633" />
+    <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="162" y="114" key="DiffContextDialog/0.25.1680.986@0.25.1680.986" timestamp="1623243750719" />
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1623246060379">
+    <state x="162" y="114" key="DiffContextDialog/0.25.1680.986@0.25.1680.986" timestamp="1626415997462" />
+    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1626415694098">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.986@0.25.1680.986" timestamp="1623246060379" />
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.988@0.25.1680.988" timestamp="1617611474217" />
+    <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.986@0.25.1680.986" timestamp="1626415694098" />
   </component>
 </project>

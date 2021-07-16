@@ -1068,7 +1068,6 @@ var _CommonDeviceManager_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UtilsClient interface {
 	//    让后台服务登录服务器并同步配置
-	LoginServerWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error)
 	SyncConfigWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error)
 	GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*StringValue, error)
 	LoadAllConfig(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*Empty, error)
@@ -1084,15 +1083,6 @@ type utilsClient struct {
 
 func NewUtilsClient(cc grpc.ClientConnInterface) UtilsClient {
 	return &utilsClient{cc}
-}
-
-func (c *utilsClient) LoginServerWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error) {
-	out := new(OperationResponse)
-	err := c.cc.Invoke(ctx, "/pb.Utils/LoginServerWithToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error) {
@@ -1163,7 +1153,6 @@ func (c *utilsClient) GetTokenModel(ctx context.Context, in *StringValue, opts .
 // for forward compatibility
 type UtilsServer interface {
 	//    让后台服务登录服务器并同步配置
-	LoginServerWithToken(context.Context, *StringValue) (*OperationResponse, error)
 	SyncConfigWithToken(context.Context, *StringValue) (*OperationResponse, error)
 	GetAllConfig(context.Context, *Empty) (*StringValue, error)
 	LoadAllConfig(context.Context, *StringValue) (*Empty, error)
@@ -1178,9 +1167,6 @@ type UtilsServer interface {
 type UnimplementedUtilsServer struct {
 }
 
-func (UnimplementedUtilsServer) LoginServerWithToken(context.Context, *StringValue) (*OperationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method LoginServerWithToken not implemented")
-}
 func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *StringValue) (*OperationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SyncConfigWithToken not implemented")
 }
@@ -1213,24 +1199,6 @@ type UnsafeUtilsServer interface {
 
 func RegisterUtilsServer(s grpc.ServiceRegistrar, srv UtilsServer) {
 	s.RegisterService(&_Utils_serviceDesc, srv)
-}
-
-func _Utils_LoginServerWithToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UtilsServer).LoginServerWithToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/pb.Utils/LoginServerWithToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).LoginServerWithToken(ctx, req.(*StringValue))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Utils_SyncConfigWithToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1363,10 +1331,6 @@ var _Utils_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "pb.Utils",
 	HandlerType: (*UtilsServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "LoginServerWithToken",
-			Handler:    _Utils_LoginServerWithToken_Handler,
-		},
 		{
 			MethodName: "SyncConfigWithToken",
 			Handler:    _Utils_SyncConfigWithToken_Handler,

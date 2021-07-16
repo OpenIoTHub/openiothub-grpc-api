@@ -717,12 +717,6 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
 }
 
 class UtilsClient extends $grpc.Client {
-  static final _$loginServerWithToken =
-      $grpc.ClientMethod<$0.StringValue, $0.OperationResponse>(
-          '/pb.Utils/LoginServerWithToken',
-          ($0.StringValue value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.OperationResponse.fromBuffer(value));
   static final _$syncConfigWithToken =
       $grpc.ClientMethod<$0.StringValue, $0.OperationResponse>(
           '/pb.Utils/SyncConfigWithToken',
@@ -762,15 +756,6 @@ class UtilsClient extends $grpc.Client {
 
   UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
-
-  $grpc.ResponseFuture<$0.OperationResponse> loginServerWithToken(
-      $0.StringValue request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$loginServerWithToken, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
-  }
 
   $grpc.ResponseFuture<$0.OperationResponse> syncConfigWithToken(
       $0.StringValue request,
@@ -838,13 +823,6 @@ abstract class UtilsServiceBase extends $grpc.Service {
 
   UtilsServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.StringValue, $0.OperationResponse>(
-        'LoginServerWithToken',
-        loginServerWithToken_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.StringValue.fromBuffer(value),
-        ($0.OperationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StringValue, $0.OperationResponse>(
         'SyncConfigWithToken',
         syncConfigWithToken_Pre,
         false,
@@ -895,11 +873,6 @@ abstract class UtilsServiceBase extends $grpc.Service {
         ($0.TokenModel value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.OperationResponse> loginServerWithToken_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
-    return loginServerWithToken(call, await request);
-  }
-
   $async.Future<$0.OperationResponse> syncConfigWithToken_Pre(
       $grpc.ServiceCall call, $async.Future<$0.StringValue> request) async {
     return syncConfigWithToken(call, await request);
@@ -935,8 +908,6 @@ abstract class UtilsServiceBase extends $grpc.Service {
     return getTokenModel(call, await request);
   }
 
-  $async.Future<$0.OperationResponse> loginServerWithToken(
-      $grpc.ServiceCall call, $0.StringValue request);
   $async.Future<$0.OperationResponse> syncConfigWithToken(
       $grpc.ServiceCall call, $0.StringValue request);
   $async.Future<$0.StringValue> getAllConfig(
