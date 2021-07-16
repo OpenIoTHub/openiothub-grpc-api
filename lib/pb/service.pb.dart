@@ -102,6 +102,57 @@ class OperationResponse extends $pb.GeneratedMessage {
   void clearMsg() => clearField(2);
 }
 
+class IoTManagerServerAndToken extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('IoTManagerServerAndToken', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+    ..aOS(1, 'Host', protoName: 'Host')
+    ..a<$core.int>(2, 'Port', $pb.PbFieldType.O3, protoName: 'Port')
+    ..aOS(3, 'Token', protoName: 'Token')
+    ..hasRequiredFields = false
+  ;
+
+  IoTManagerServerAndToken._() : super();
+  factory IoTManagerServerAndToken() => create();
+  factory IoTManagerServerAndToken.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IoTManagerServerAndToken.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  IoTManagerServerAndToken clone() => IoTManagerServerAndToken()..mergeFromMessage(this);
+  IoTManagerServerAndToken copyWith(void Function(IoTManagerServerAndToken) updates) => super.copyWith((message) => updates(message as IoTManagerServerAndToken));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static IoTManagerServerAndToken create() => IoTManagerServerAndToken._();
+  IoTManagerServerAndToken createEmptyInstance() => create();
+  static $pb.PbList<IoTManagerServerAndToken> createRepeated() => $pb.PbList<IoTManagerServerAndToken>();
+  @$core.pragma('dart2js:noInline')
+  static IoTManagerServerAndToken getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IoTManagerServerAndToken>(create);
+  static IoTManagerServerAndToken _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get host => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set host($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHost() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHost() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get port => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set port($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPort() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPort() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get token => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set token($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearToken() => clearField(3);
+}
+
 class MDNSService extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('MDNSService', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOS(1, 'Instance', protoName: 'Instance')

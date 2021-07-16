@@ -1068,7 +1068,7 @@ var _CommonDeviceManager_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UtilsClient interface {
 	//    让后台服务登录服务器并同步配置
-	SyncConfigWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error)
+	SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OperationResponse, error)
 	GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*StringValue, error)
 	LoadAllConfig(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*Empty, error)
 	GetAllmDNSServiceList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*MDNSServiceList, error)
@@ -1085,7 +1085,7 @@ func NewUtilsClient(cc grpc.ClientConnInterface) UtilsClient {
 	return &utilsClient{cc}
 }
 
-func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*OperationResponse, error) {
+func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OperationResponse, error) {
 	out := new(OperationResponse)
 	err := c.cc.Invoke(ctx, "/pb.Utils/SyncConfigWithToken", in, out, opts...)
 	if err != nil {
@@ -1153,7 +1153,7 @@ func (c *utilsClient) GetTokenModel(ctx context.Context, in *StringValue, opts .
 // for forward compatibility
 type UtilsServer interface {
 	//    让后台服务登录服务器并同步配置
-	SyncConfigWithToken(context.Context, *StringValue) (*OperationResponse, error)
+	SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OperationResponse, error)
 	GetAllConfig(context.Context, *Empty) (*StringValue, error)
 	LoadAllConfig(context.Context, *StringValue) (*Empty, error)
 	GetAllmDNSServiceList(context.Context, *Empty) (*MDNSServiceList, error)
@@ -1167,7 +1167,7 @@ type UtilsServer interface {
 type UnimplementedUtilsServer struct {
 }
 
-func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *StringValue) (*OperationResponse, error) {
+func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OperationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SyncConfigWithToken not implemented")
 }
 func (UnimplementedUtilsServer) GetAllConfig(context.Context, *Empty) (*StringValue, error) {
@@ -1202,7 +1202,7 @@ func RegisterUtilsServer(s grpc.ServiceRegistrar, srv UtilsServer) {
 }
 
 func _Utils_SyncConfigWithToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringValue)
+	in := new(IoTManagerServerAndToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1214,7 +1214,7 @@ func _Utils_SyncConfigWithToken_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/pb.Utils/SyncConfigWithToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UtilsServer).SyncConfigWithToken(ctx, req.(*StringValue))
+		return srv.(UtilsServer).SyncConfigWithToken(ctx, req.(*IoTManagerServerAndToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }

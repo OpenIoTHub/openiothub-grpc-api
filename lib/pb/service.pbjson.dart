@@ -24,6 +24,15 @@ const OperationResponse$json = const {
   ],
 };
 
+const IoTManagerServerAndToken$json = const {
+  '1': 'IoTManagerServerAndToken',
+  '2': const [
+    const {'1': 'Host', '3': 1, '4': 1, '5': 9, '10': 'Host'},
+    const {'1': 'Port', '3': 2, '4': 1, '5': 5, '10': 'Port'},
+    const {'1': 'Token', '3': 3, '4': 1, '5': 9, '10': 'Token'},
+  ],
+};
+
 const MDNSService$json = const {
   '1': 'MDNSService',
   '2': const [
