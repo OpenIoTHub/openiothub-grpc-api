@@ -61,6 +61,47 @@ class Empty extends $pb.GeneratedMessage {
   static Empty _defaultInstance;
 }
 
+class OperationResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OperationResponse', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+    ..a<$core.int>(1, 'Code', $pb.PbFieldType.O3, protoName: 'Code')
+    ..aOS(2, 'Msg', protoName: 'Msg')
+    ..hasRequiredFields = false
+  ;
+
+  OperationResponse._() : super();
+  factory OperationResponse() => create();
+  factory OperationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OperationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  OperationResponse clone() => OperationResponse()..mergeFromMessage(this);
+  OperationResponse copyWith(void Function(OperationResponse) updates) => super.copyWith((message) => updates(message as OperationResponse));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static OperationResponse create() => OperationResponse._();
+  OperationResponse createEmptyInstance() => create();
+  static $pb.PbList<OperationResponse> createRepeated() => $pb.PbList<OperationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static OperationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationResponse>(create);
+  static OperationResponse _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get code => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set code($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get msg => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set msg($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMsg() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMsg() => clearField(2);
+}
+
 class MDNSService extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('MDNSService', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOS(1, 'Instance', protoName: 'Instance')

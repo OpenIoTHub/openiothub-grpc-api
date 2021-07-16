@@ -10,6 +10,11 @@ message StringValue{
 //小米网关设备
 message Empty{}
 
+message OperationResponse{
+    int32 Code = 1;
+    string Msg = 2;
+}
+
 message MDNSService{
     string Instance = 1;
     string IP = 2;
@@ -141,10 +146,15 @@ service CommonDeviceManager {
 }
 
 service Utils {
+//    让后台服务登录服务器并同步配置
+    rpc LoginServerWithToken (StringValue) returns (OperationResponse) {}
+    rpc SyncConfigWithToken (StringValue) returns (OperationResponse) {}
+
+    rpc GetAllConfig (Empty) returns (StringValue) {}
+    rpc LoadAllConfig (StringValue) returns (Empty) {}
+
     rpc GetAllmDNSServiceList (Empty) returns (MDNSServiceList) {}
     rpc GetmDNSServiceListByType (StringValue) returns (MDNSServiceList) {}
     rpc ConvertOctonaryUtf8 (StringValue) returns (StringValue) {}
-    rpc GetAllConfig (Empty) returns (StringValue) {}
-    rpc LoadAllConfig (StringValue) returns (Empty) {}
     rpc GetTokenModel (StringValue) returns (TokenModel) {}
 }
