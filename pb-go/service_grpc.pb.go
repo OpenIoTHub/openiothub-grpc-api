@@ -1068,7 +1068,7 @@ var _CommonDeviceManager_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UtilsClient interface {
 	//    让后台服务登录服务器并同步配置
-	SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OperationResponse, error)
+	SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error)
 	GetAllConfig(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*StringValue, error)
 	LoadAllConfig(ctx context.Context, in *StringValue, opts ...grpc.CallOption) (*Empty, error)
 	GetAllmDNSServiceList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*MDNSServiceList, error)
@@ -1085,8 +1085,8 @@ func NewUtilsClient(cc grpc.ClientConnInterface) UtilsClient {
 	return &utilsClient{cc}
 }
 
-func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OperationResponse, error) {
-	out := new(OperationResponse)
+func (c *utilsClient) SyncConfigWithToken(ctx context.Context, in *IoTManagerServerAndToken, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error) {
+	out := new(OpenIoTHubOperationResponse)
 	err := c.cc.Invoke(ctx, "/pb.Utils/SyncConfigWithToken", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1153,7 +1153,7 @@ func (c *utilsClient) GetTokenModel(ctx context.Context, in *StringValue, opts .
 // for forward compatibility
 type UtilsServer interface {
 	//    让后台服务登录服务器并同步配置
-	SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OperationResponse, error)
+	SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OpenIoTHubOperationResponse, error)
 	GetAllConfig(context.Context, *Empty) (*StringValue, error)
 	LoadAllConfig(context.Context, *StringValue) (*Empty, error)
 	GetAllmDNSServiceList(context.Context, *Empty) (*MDNSServiceList, error)
@@ -1167,7 +1167,7 @@ type UtilsServer interface {
 type UnimplementedUtilsServer struct {
 }
 
-func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OperationResponse, error) {
+func (UnimplementedUtilsServer) SyncConfigWithToken(context.Context, *IoTManagerServerAndToken) (*OpenIoTHubOperationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SyncConfigWithToken not implemented")
 }
 func (UnimplementedUtilsServer) GetAllConfig(context.Context, *Empty) (*StringValue, error) {

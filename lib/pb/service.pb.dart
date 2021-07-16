@@ -61,27 +61,27 @@ class Empty extends $pb.GeneratedMessage {
   static Empty _defaultInstance;
 }
 
-class OperationResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OperationResponse', package: const $pb.PackageName('pb'), createEmptyInstance: create)
+class OpenIoTHubOperationResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('OpenIoTHubOperationResponse', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..a<$core.int>(1, 'Code', $pb.PbFieldType.O3, protoName: 'Code')
     ..aOS(2, 'Msg', protoName: 'Msg')
     ..hasRequiredFields = false
   ;
 
-  OperationResponse._() : super();
-  factory OperationResponse() => create();
-  factory OperationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory OperationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  OperationResponse clone() => OperationResponse()..mergeFromMessage(this);
-  OperationResponse copyWith(void Function(OperationResponse) updates) => super.copyWith((message) => updates(message as OperationResponse));
+  OpenIoTHubOperationResponse._() : super();
+  factory OpenIoTHubOperationResponse() => create();
+  factory OpenIoTHubOperationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OpenIoTHubOperationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  OpenIoTHubOperationResponse clone() => OpenIoTHubOperationResponse()..mergeFromMessage(this);
+  OpenIoTHubOperationResponse copyWith(void Function(OpenIoTHubOperationResponse) updates) => super.copyWith((message) => updates(message as OpenIoTHubOperationResponse));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static OperationResponse create() => OperationResponse._();
-  OperationResponse createEmptyInstance() => create();
-  static $pb.PbList<OperationResponse> createRepeated() => $pb.PbList<OperationResponse>();
+  static OpenIoTHubOperationResponse create() => OpenIoTHubOperationResponse._();
+  OpenIoTHubOperationResponse createEmptyInstance() => create();
+  static $pb.PbList<OpenIoTHubOperationResponse> createRepeated() => $pb.PbList<OpenIoTHubOperationResponse>();
   @$core.pragma('dart2js:noInline')
-  static OperationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationResponse>(create);
-  static OperationResponse _defaultInstance;
+  static OpenIoTHubOperationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OpenIoTHubOperationResponse>(create);
+  static OpenIoTHubOperationResponse _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get code => $_getIZ(0);

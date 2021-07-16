@@ -16,8 +16,8 @@ const Empty$json = const {
   '1': 'Empty',
 };
 
-const OperationResponse$json = const {
-  '1': 'OperationResponse',
+const OpenIoTHubOperationResponse$json = const {
+  '1': 'OpenIoTHubOperationResponse',
   '2': const [
     const {'1': 'Code', '3': 1, '4': 1, '5': 5, '10': 'Code'},
     const {'1': 'Msg', '3': 2, '4': 1, '5': 9, '10': 'Msg'},

@@ -717,12 +717,12 @@ abstract class CommonDeviceManagerServiceBase extends $grpc.Service {
 }
 
 class UtilsClient extends $grpc.Client {
-  static final _$syncConfigWithToken =
-      $grpc.ClientMethod<$0.IoTManagerServerAndToken, $0.OperationResponse>(
-          '/pb.Utils/SyncConfigWithToken',
-          ($0.IoTManagerServerAndToken value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.OperationResponse.fromBuffer(value));
+  static final _$syncConfigWithToken = $grpc.ClientMethod<
+          $0.IoTManagerServerAndToken, $0.OpenIoTHubOperationResponse>(
+      '/pb.Utils/SyncConfigWithToken',
+      ($0.IoTManagerServerAndToken value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.OpenIoTHubOperationResponse.fromBuffer(value));
   static final _$getAllConfig = $grpc.ClientMethod<$0.Empty, $0.StringValue>(
       '/pb.Utils/GetAllConfig',
       ($0.Empty value) => value.writeToBuffer(),
@@ -757,7 +757,7 @@ class UtilsClient extends $grpc.Client {
   UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
 
-  $grpc.ResponseFuture<$0.OperationResponse> syncConfigWithToken(
+  $grpc.ResponseFuture<$0.OpenIoTHubOperationResponse> syncConfigWithToken(
       $0.IoTManagerServerAndToken request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
@@ -822,15 +822,15 @@ abstract class UtilsServiceBase extends $grpc.Service {
   $core.String get $name => 'pb.Utils';
 
   UtilsServiceBase() {
-    $addMethod(
-        $grpc.ServiceMethod<$0.IoTManagerServerAndToken, $0.OperationResponse>(
-            'SyncConfigWithToken',
-            syncConfigWithToken_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.IoTManagerServerAndToken.fromBuffer(value),
-            ($0.OperationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IoTManagerServerAndToken,
+            $0.OpenIoTHubOperationResponse>(
+        'SyncConfigWithToken',
+        syncConfigWithToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.IoTManagerServerAndToken.fromBuffer(value),
+        ($0.OpenIoTHubOperationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $0.StringValue>(
         'GetAllConfig',
         getAllConfig_Pre,
@@ -875,7 +875,7 @@ abstract class UtilsServiceBase extends $grpc.Service {
         ($0.TokenModel value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.OperationResponse> syncConfigWithToken_Pre(
+  $async.Future<$0.OpenIoTHubOperationResponse> syncConfigWithToken_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.IoTManagerServerAndToken> request) async {
     return syncConfigWithToken(call, await request);
@@ -911,7 +911,7 @@ abstract class UtilsServiceBase extends $grpc.Service {
     return getTokenModel(call, await request);
   }
 
-  $async.Future<$0.OperationResponse> syncConfigWithToken(
+  $async.Future<$0.OpenIoTHubOperationResponse> syncConfigWithToken(
       $grpc.ServiceCall call, $0.IoTManagerServerAndToken request);
   $async.Future<$0.StringValue> getAllConfig(
       $grpc.ServiceCall call, $0.Empty request);
