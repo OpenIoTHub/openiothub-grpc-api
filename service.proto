@@ -29,10 +29,11 @@ message MDNSService{
 }
 
 message Device{
-    string RunId = 1;
-    string Addr = 2;
-    string Mac = 3;
-    string Description = 4;
+    string Uuid = 1;
+    string RunId = 2;
+    string Addr = 3;
+    string Mac = 4;
+    string Description = 5;
 }
 
 message DeviceList{
@@ -67,11 +68,12 @@ message PortService{
 
 message PortConfig {
     Device Device = 1;
-    int32 LocalProt = 2;
-    int32 RemotePort = 3;
-    string Description = 4;
-    bool RemotePortStatus = 5;
-    PortService MDNSInfo = 6;
+    int32 Uuid = 2;
+    int32 LocalProt = 3;
+    int32 RemotePort = 4;
+    string Description = 5;
+    bool RemotePortStatus = 6;
+    PortService MDNSInfo = 7;
 }
 
 message PortList{

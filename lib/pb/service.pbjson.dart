@@ -46,10 +46,11 @@ const MDNSService$json = const {
 const Device$json = const {
   '1': 'Device',
   '2': const [
-    const {'1': 'RunId', '3': 1, '4': 1, '5': 9, '10': 'RunId'},
-    const {'1': 'Addr', '3': 2, '4': 1, '5': 9, '10': 'Addr'},
-    const {'1': 'Mac', '3': 3, '4': 1, '5': 9, '10': 'Mac'},
-    const {'1': 'Description', '3': 4, '4': 1, '5': 9, '10': 'Description'},
+    const {'1': 'Uuid', '3': 1, '4': 1, '5': 9, '10': 'Uuid'},
+    const {'1': 'RunId', '3': 2, '4': 1, '5': 9, '10': 'RunId'},
+    const {'1': 'Addr', '3': 3, '4': 1, '5': 9, '10': 'Addr'},
+    const {'1': 'Mac', '3': 4, '4': 1, '5': 9, '10': 'Mac'},
+    const {'1': 'Description', '3': 5, '4': 1, '5': 9, '10': 'Description'},
   ],
 };
 
@@ -103,11 +104,12 @@ const PortConfig$json = const {
   '1': 'PortConfig',
   '2': const [
     const {'1': 'Device', '3': 1, '4': 1, '5': 11, '6': '.pb.Device', '10': 'Device'},
-    const {'1': 'LocalProt', '3': 2, '4': 1, '5': 5, '10': 'LocalProt'},
-    const {'1': 'RemotePort', '3': 3, '4': 1, '5': 5, '10': 'RemotePort'},
-    const {'1': 'Description', '3': 4, '4': 1, '5': 9, '10': 'Description'},
-    const {'1': 'RemotePortStatus', '3': 5, '4': 1, '5': 8, '10': 'RemotePortStatus'},
-    const {'1': 'MDNSInfo', '3': 6, '4': 1, '5': 11, '6': '.pb.PortService', '10': 'MDNSInfo'},
+    const {'1': 'Uuid', '3': 2, '4': 1, '5': 5, '10': 'Uuid'},
+    const {'1': 'LocalProt', '3': 3, '4': 1, '5': 5, '10': 'LocalProt'},
+    const {'1': 'RemotePort', '3': 4, '4': 1, '5': 5, '10': 'RemotePort'},
+    const {'1': 'Description', '3': 5, '4': 1, '5': 9, '10': 'Description'},
+    const {'1': 'RemotePortStatus', '3': 6, '4': 1, '5': 8, '10': 'RemotePortStatus'},
+    const {'1': 'MDNSInfo', '3': 7, '4': 1, '5': 11, '6': '.pb.PortService', '10': 'MDNSInfo'},
   ],
 };
 
