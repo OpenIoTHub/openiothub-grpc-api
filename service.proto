@@ -69,11 +69,16 @@ message PortService{
 message PortConfig {
     Device Device = 1;
     int32 Uuid = 2;
-    int32 LocalProt = 3;
-    int32 RemotePort = 4;
-    string Description = 5;
-    bool RemotePortStatus = 6;
-    PortService MDNSInfo = 7;
+    string Name = 3;
+    string Description = 4;
+    int32 LocalProt = 5;
+    int32 RemotePort = 6;
+    string BindAllAddr = 7;
+    string Domain = 8;
+    string NetworkProtocol = 9;
+    string ApplicationProtocol = 10;
+    bool RemotePortStatus = 11;
+    PortService MDNSInfo = 12;
 }
 
 message PortList{

@@ -142,17 +142,18 @@
     <MESSAGE value="添加登录和同步配置接口" />
     <MESSAGE value="同步配置接口" />
     <MESSAGE value="重名冲突" />
-    <option name="LAST_COMMIT_MESSAGE" value="重名冲突" />
+    <MESSAGE value="添加uuid" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加uuid" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626427773631">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626849666061">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626427773631" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626849666061" />
     <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
       <screen x="0" y="25" width="1680" height="986" />
     </state>

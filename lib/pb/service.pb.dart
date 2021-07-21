@@ -475,11 +475,16 @@ class PortConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('PortConfig', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOM<Device>(1, 'Device', protoName: 'Device', subBuilder: Device.create)
     ..a<$core.int>(2, 'Uuid', $pb.PbFieldType.O3, protoName: 'Uuid')
-    ..a<$core.int>(3, 'LocalProt', $pb.PbFieldType.O3, protoName: 'LocalProt')
-    ..a<$core.int>(4, 'RemotePort', $pb.PbFieldType.O3, protoName: 'RemotePort')
-    ..aOS(5, 'Description', protoName: 'Description')
-    ..aOB(6, 'RemotePortStatus', protoName: 'RemotePortStatus')
-    ..aOM<PortService>(7, 'MDNSInfo', protoName: 'MDNSInfo', subBuilder: PortService.create)
+    ..aOS(3, 'Name', protoName: 'Name')
+    ..aOS(4, 'Description', protoName: 'Description')
+    ..a<$core.int>(5, 'LocalProt', $pb.PbFieldType.O3, protoName: 'LocalProt')
+    ..a<$core.int>(6, 'RemotePort', $pb.PbFieldType.O3, protoName: 'RemotePort')
+    ..aOS(7, 'BindAllAddr', protoName: 'BindAllAddr')
+    ..aOS(8, 'Domain', protoName: 'Domain')
+    ..aOS(9, 'NetworkProtocol', protoName: 'NetworkProtocol')
+    ..aOS(10, 'ApplicationProtocol', protoName: 'ApplicationProtocol')
+    ..aOB(11, 'RemotePortStatus', protoName: 'RemotePortStatus')
+    ..aOM<PortService>(12, 'MDNSInfo', protoName: 'MDNSInfo', subBuilder: PortService.create)
     ..hasRequiredFields = false
   ;
 
@@ -519,51 +524,96 @@ class PortConfig extends $pb.GeneratedMessage {
   void clearUuid() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get localProt => $_getIZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set localProt($core.int v) { $_setSignedInt32(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasLocalProt() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearLocalProt() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.int get remotePort => $_getIZ(3);
+  $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
-  set remotePort($core.int v) { $_setSignedInt32(3, v); }
+  set description($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasRemotePort() => $_has(3);
+  $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRemotePort() => clearField(4);
+  void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
+  $core.int get localProt => $_getIZ(4);
   @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
+  set localProt($core.int v) { $_setSignedInt32(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
+  $core.bool hasLocalProt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
+  void clearLocalProt() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get remotePortStatus => $_getBF(5);
+  $core.int get remotePort => $_getIZ(5);
   @$pb.TagNumber(6)
-  set remotePortStatus($core.bool v) { $_setBool(5, v); }
+  set remotePort($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasRemotePortStatus() => $_has(5);
+  $core.bool hasRemotePort() => $_has(5);
   @$pb.TagNumber(6)
-  void clearRemotePortStatus() => clearField(6);
+  void clearRemotePort() => clearField(6);
 
   @$pb.TagNumber(7)
-  PortService get mDNSInfo => $_getN(6);
+  $core.String get bindAllAddr => $_getSZ(6);
   @$pb.TagNumber(7)
-  set mDNSInfo(PortService v) { setField(7, v); }
+  set bindAllAddr($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasMDNSInfo() => $_has(6);
+  $core.bool hasBindAllAddr() => $_has(6);
   @$pb.TagNumber(7)
-  void clearMDNSInfo() => clearField(7);
-  @$pb.TagNumber(7)
-  PortService ensureMDNSInfo() => $_ensure(6);
+  void clearBindAllAddr() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get domain => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set domain($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDomain() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDomain() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get networkProtocol => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set networkProtocol($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasNetworkProtocol() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNetworkProtocol() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get applicationProtocol => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set applicationProtocol($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasApplicationProtocol() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearApplicationProtocol() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get remotePortStatus => $_getBF(10);
+  @$pb.TagNumber(11)
+  set remotePortStatus($core.bool v) { $_setBool(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasRemotePortStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRemotePortStatus() => clearField(11);
+
+  @$pb.TagNumber(12)
+  PortService get mDNSInfo => $_getN(11);
+  @$pb.TagNumber(12)
+  set mDNSInfo(PortService v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasMDNSInfo() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMDNSInfo() => clearField(12);
+  @$pb.TagNumber(12)
+  PortService ensureMDNSInfo() => $_ensure(11);
 }
 
 class PortList extends $pb.GeneratedMessage {
