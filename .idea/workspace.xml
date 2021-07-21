@@ -151,10 +151,10 @@
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626860983650">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1626861303968">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626860983650" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1626861303968" />
     <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
       <screen x="0" y="25" width="1680" height="986" />
     </state>

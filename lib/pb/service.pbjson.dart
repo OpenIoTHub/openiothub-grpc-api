@@ -50,7 +50,8 @@ const Device$json = const {
     const {'1': 'RunId', '3': 2, '4': 1, '5': 9, '10': 'RunId'},
     const {'1': 'Addr', '3': 3, '4': 1, '5': 9, '10': 'Addr'},
     const {'1': 'Mac', '3': 4, '4': 1, '5': 9, '10': 'Mac'},
-    const {'1': 'Description', '3': 5, '4': 1, '5': 9, '10': 'Description'},
+    const {'1': 'Name', '3': 5, '4': 1, '5': 9, '10': 'Name'},
+    const {'1': 'Description', '3': 6, '4': 1, '5': 9, '10': 'Description'},
   ],
 };
 
@@ -66,10 +67,11 @@ const SessionConfig$json = const {
   '2': const [
     const {'1': 'RunId', '3': 1, '4': 1, '5': 9, '10': 'RunId'},
     const {'1': 'Token', '3': 2, '4': 1, '5': 9, '10': 'Token'},
-    const {'1': 'Description', '3': 3, '4': 1, '5': 9, '10': 'Description'},
-    const {'1': 'StatusToClient', '3': 4, '4': 1, '5': 8, '10': 'StatusToClient'},
-    const {'1': 'StatusP2PAsClient', '3': 5, '4': 1, '5': 8, '10': 'StatusP2PAsClient'},
-    const {'1': 'StatusP2PAsServer', '3': 6, '4': 1, '5': 8, '10': 'StatusP2PAsServer'},
+    const {'1': 'Name', '3': 3, '4': 1, '5': 9, '10': 'Name'},
+    const {'1': 'Description', '3': 4, '4': 1, '5': 9, '10': 'Description'},
+    const {'1': 'StatusToClient', '3': 5, '4': 1, '5': 8, '10': 'StatusToClient'},
+    const {'1': 'StatusP2PAsClient', '3': 6, '4': 1, '5': 8, '10': 'StatusP2PAsClient'},
+    const {'1': 'StatusP2PAsServer', '3': 7, '4': 1, '5': 8, '10': 'StatusP2PAsServer'},
   ],
 };
 

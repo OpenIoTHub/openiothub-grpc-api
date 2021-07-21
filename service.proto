@@ -33,7 +33,8 @@ message Device{
     string RunId = 2;
     string Addr = 3;
     string Mac = 4;
-    string Description = 5;
+    string Name = 5;
+    string Description = 6;
 }
 
 message DeviceList{
@@ -44,10 +45,11 @@ message DeviceList{
 message SessionConfig {
     string RunId = 1;
     string Token = 2;
-    string Description = 3;
-    bool StatusToClient = 4;
-    bool StatusP2PAsClient = 5;
-    bool StatusP2PAsServer = 6;
+    string Name = 3;
+    string Description = 4;
+    bool StatusToClient = 5;
+    bool StatusP2PAsClient = 6;
+    bool StatusP2PAsServer = 7;
 }
 
 message SessionList{

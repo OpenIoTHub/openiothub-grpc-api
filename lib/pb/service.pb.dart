@@ -220,7 +220,8 @@ class Device extends $pb.GeneratedMessage {
     ..aOS(2, 'RunId', protoName: 'RunId')
     ..aOS(3, 'Addr', protoName: 'Addr')
     ..aOS(4, 'Mac', protoName: 'Mac')
-    ..aOS(5, 'Description', protoName: 'Description')
+    ..aOS(5, 'Name', protoName: 'Name')
+    ..aOS(6, 'Description', protoName: 'Description')
     ..hasRequiredFields = false
   ;
 
@@ -276,13 +277,22 @@ class Device extends $pb.GeneratedMessage {
   void clearMac() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
+  $core.String get name => $_getSZ(4);
   @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
+  set name($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
+  $core.bool hasName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
+  void clearName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => clearField(6);
 }
 
 class DeviceList extends $pb.GeneratedMessage {
@@ -314,10 +324,11 @@ class SessionConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('SessionConfig', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOS(1, 'RunId', protoName: 'RunId')
     ..aOS(2, 'Token', protoName: 'Token')
-    ..aOS(3, 'Description', protoName: 'Description')
-    ..aOB(4, 'StatusToClient', protoName: 'StatusToClient')
-    ..aOB(5, 'StatusP2PAsClient', protoName: 'StatusP2PAsClient')
-    ..aOB(6, 'StatusP2PAsServer', protoName: 'StatusP2PAsServer')
+    ..aOS(3, 'Name', protoName: 'Name')
+    ..aOS(4, 'Description', protoName: 'Description')
+    ..aOB(5, 'StatusToClient', protoName: 'StatusToClient')
+    ..aOB(6, 'StatusP2PAsClient', protoName: 'StatusP2PAsClient')
+    ..aOB(7, 'StatusP2PAsServer', protoName: 'StatusP2PAsServer')
     ..hasRequiredFields = false
   ;
 
@@ -355,40 +366,49 @@ class SessionConfig extends $pb.GeneratedMessage {
   void clearToken() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get description => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set description($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDescription() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get statusToClient => $_getBF(3);
+  $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
-  set statusToClient($core.bool v) { $_setBool(3, v); }
+  set description($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasStatusToClient() => $_has(3);
+  $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
-  void clearStatusToClient() => clearField(4);
+  void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get statusP2PAsClient => $_getBF(4);
+  $core.bool get statusToClient => $_getBF(4);
   @$pb.TagNumber(5)
-  set statusP2PAsClient($core.bool v) { $_setBool(4, v); }
+  set statusToClient($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasStatusP2PAsClient() => $_has(4);
+  $core.bool hasStatusToClient() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatusP2PAsClient() => clearField(5);
+  void clearStatusToClient() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get statusP2PAsServer => $_getBF(5);
+  $core.bool get statusP2PAsClient => $_getBF(5);
   @$pb.TagNumber(6)
-  set statusP2PAsServer($core.bool v) { $_setBool(5, v); }
+  set statusP2PAsClient($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasStatusP2PAsServer() => $_has(5);
+  $core.bool hasStatusP2PAsClient() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatusP2PAsServer() => clearField(6);
+  void clearStatusP2PAsClient() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get statusP2PAsServer => $_getBF(6);
+  @$pb.TagNumber(7)
+  set statusP2PAsServer($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStatusP2PAsServer() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatusP2PAsServer() => clearField(7);
 }
 
 class SessionList extends $pb.GeneratedMessage {
