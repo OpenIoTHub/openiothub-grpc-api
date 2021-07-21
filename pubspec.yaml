@@ -1,6 +1,6 @@
 name: openiothub_grpc_api
 description: OpenioTHub Dart gRPC.
-version: 0.0.1+8
+version: 0.0.1+9
 homepage: https://github.com/OpenIotHUb/grpc
 
 environment:

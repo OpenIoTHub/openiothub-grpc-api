@@ -68,12 +68,12 @@ message PortService{
 
 message PortConfig {
     Device Device = 1;
-    int32 Uuid = 2;
+    string Uuid = 2;
     string Name = 3;
     string Description = 4;
     int32 LocalProt = 5;
     int32 RemotePort = 6;
-    string BindAllAddr = 7;
+    bool BindAllAddr = 7;
     string Domain = 8;
     string NetworkProtocol = 9;
     string ApplicationProtocol = 10;

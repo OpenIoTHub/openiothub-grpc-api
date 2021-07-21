@@ -474,12 +474,12 @@ class PortService extends $pb.GeneratedMessage {
 class PortConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('PortConfig', package: const $pb.PackageName('pb'), createEmptyInstance: create)
     ..aOM<Device>(1, 'Device', protoName: 'Device', subBuilder: Device.create)
-    ..a<$core.int>(2, 'Uuid', $pb.PbFieldType.O3, protoName: 'Uuid')
+    ..aOS(2, 'Uuid', protoName: 'Uuid')
     ..aOS(3, 'Name', protoName: 'Name')
     ..aOS(4, 'Description', protoName: 'Description')
     ..a<$core.int>(5, 'LocalProt', $pb.PbFieldType.O3, protoName: 'LocalProt')
     ..a<$core.int>(6, 'RemotePort', $pb.PbFieldType.O3, protoName: 'RemotePort')
-    ..aOS(7, 'BindAllAddr', protoName: 'BindAllAddr')
+    ..aOB(7, 'BindAllAddr', protoName: 'BindAllAddr')
     ..aOS(8, 'Domain', protoName: 'Domain')
     ..aOS(9, 'NetworkProtocol', protoName: 'NetworkProtocol')
     ..aOS(10, 'ApplicationProtocol', protoName: 'ApplicationProtocol')
@@ -515,9 +515,9 @@ class PortConfig extends $pb.GeneratedMessage {
   Device ensureDevice() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.int get uuid => $_getIZ(1);
+  $core.String get uuid => $_getSZ(1);
   @$pb.TagNumber(2)
-  set uuid($core.int v) { $_setSignedInt32(1, v); }
+  set uuid($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasUuid() => $_has(1);
   @$pb.TagNumber(2)
@@ -560,9 +560,9 @@ class PortConfig extends $pb.GeneratedMessage {
   void clearRemotePort() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get bindAllAddr => $_getSZ(6);
+  $core.bool get bindAllAddr => $_getBF(6);
   @$pb.TagNumber(7)
-  set bindAllAddr($core.String v) { $_setString(6, v); }
+  set bindAllAddr($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasBindAllAddr() => $_has(6);
   @$pb.TagNumber(7)
