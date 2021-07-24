@@ -31,6 +31,9 @@ type SessionManagerClient interface {
 	RefreshmDNSProxyList(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	// 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
 	GetAllTCP(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*PortList, error)
+	//:TODO VPN接口
+	// 通知这个网关删除配置文件中的token
+	DeletRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error)
 }
 
 type sessionManagerClient struct {
@@ -122,6 +125,15 @@ func (c *sessionManagerClient) GetAllTCP(ctx context.Context, in *SessionConfig,
 	return out, nil
 }
 
+func (c *sessionManagerClient) DeletRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error) {
+	out := new(OpenIoTHubOperationResponse)
+	err := c.cc.Invoke(ctx, "/pb.SessionManager/DeletRemoteGatewayConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SessionManagerServer is the server API for SessionManager service.
 // All implementations must embed UnimplementedSessionManagerServer
 // for forward compatibility
@@ -140,6 +152,9 @@ type SessionManagerServer interface {
 	RefreshmDNSProxyList(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error)
 	// 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
 	GetAllTCP(context.Context, *SessionConfig) (*PortList, error)
+	//:TODO VPN接口
+	// 通知这个网关删除配置文件中的token
+	DeletRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error)
 	mustEmbedUnimplementedSessionManagerServer()
 }
 
@@ -173,6 +188,9 @@ func (UnimplementedSessionManagerServer) RefreshmDNSProxyList(context.Context, *
 }
 func (UnimplementedSessionManagerServer) GetAllTCP(context.Context, *SessionConfig) (*PortList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllTCP not implemented")
+}
+func (UnimplementedSessionManagerServer) DeletRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeletRemoteGatewayConfig not implemented")
 }
 func (UnimplementedSessionManagerServer) mustEmbedUnimplementedSessionManagerServer() {}
 
@@ -349,6 +367,24 @@ func _SessionManager_GetAllTCP_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SessionManager_DeletRemoteGatewayConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SessionConfig)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SessionManagerServer).DeletRemoteGatewayConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.SessionManager/DeletRemoteGatewayConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SessionManagerServer).DeletRemoteGatewayConfig(ctx, req.(*SessionConfig))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _SessionManager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "pb.SessionManager",
 	HandlerType: (*SessionManagerServer)(nil),
@@ -388,6 +424,10 @@ var _SessionManager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAllTCP",
 			Handler:    _SessionManager_GetAllTCP_Handler,
+		},
+		{
+			MethodName: "DeletRemoteGatewayConfig",
+			Handler:    _SessionManager_DeletRemoteGatewayConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

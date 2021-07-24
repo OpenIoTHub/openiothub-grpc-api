@@ -132,6 +132,8 @@ service SessionManager {
     // 获取通过mDNS自动映射的TCP端口列表，然后可以查看页面
     rpc GetAllTCP (SessionConfig) returns (PortList) {}
     //:TODO VPN接口
+    // 通知这个网关删除配置文件中的token
+    rpc DeletRemoteGatewayConfig (SessionConfig) returns (OpenIoTHubOperationResponse) {}
 }
 
 // 服务的定义

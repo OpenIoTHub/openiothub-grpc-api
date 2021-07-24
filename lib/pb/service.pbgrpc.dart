@@ -61,6 +61,12 @@ class SessionManagerClient extends $grpc.Client {
       '/pb.SessionManager/GetAllTCP',
       ($0.SessionConfig value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.PortList.fromBuffer(value));
+  static final _$deletRemoteGatewayConfig =
+      $grpc.ClientMethod<$0.SessionConfig, $0.OpenIoTHubOperationResponse>(
+          '/pb.SessionManager/DeletRemoteGatewayConfig',
+          ($0.SessionConfig value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.OpenIoTHubOperationResponse.fromBuffer(value));
 
   SessionManagerClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -139,6 +145,15 @@ class SessionManagerClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$0.OpenIoTHubOperationResponse> deletRemoteGatewayConfig(
+      $0.SessionConfig request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$deletRemoteGatewayConfig, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class SessionManagerServiceBase extends $grpc.Service {
@@ -208,6 +223,14 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
         ($0.PortList value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.SessionConfig, $0.OpenIoTHubOperationResponse>(
+            'DeletRemoteGatewayConfig',
+            deletRemoteGatewayConfig_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
+            ($0.OpenIoTHubOperationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.SessionConfig> createOneSession_Pre(
@@ -255,6 +278,11 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
     return getAllTCP(call, await request);
   }
 
+  $async.Future<$0.OpenIoTHubOperationResponse> deletRemoteGatewayConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.SessionConfig> request) async {
+    return deletRemoteGatewayConfig(call, await request);
+  }
+
   $async.Future<$0.SessionConfig> createOneSession(
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.OpenIoTHubEmpty> deleteOneSession(
@@ -272,6 +300,8 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
   $async.Future<$0.OpenIoTHubEmpty> refreshmDNSProxyList(
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.PortList> getAllTCP(
+      $grpc.ServiceCall call, $0.SessionConfig request);
+  $async.Future<$0.OpenIoTHubOperationResponse> deletRemoteGatewayConfig(
       $grpc.ServiceCall call, $0.SessionConfig request);
 }
 
