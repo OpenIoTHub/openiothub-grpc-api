@@ -133,7 +133,7 @@ service SessionManager {
     rpc GetAllTCP (SessionConfig) returns (PortList) {}
     //:TODO VPN接口
     // 通知这个网关删除配置文件中的token
-    rpc DeletRemoteGatewayConfig (SessionConfig) returns (OpenIoTHubOperationResponse) {}
+    rpc DeleteRemoteGatewayConfig (SessionConfig) returns (OpenIoTHubOperationResponse) {}
 }
 
 // 服务的定义

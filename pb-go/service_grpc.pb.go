@@ -33,7 +33,7 @@ type SessionManagerClient interface {
 	GetAllTCP(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*PortList, error)
 	//:TODO VPN接口
 	// 通知这个网关删除配置文件中的token
-	DeletRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error)
+	DeleteRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error)
 }
 
 type sessionManagerClient struct {
@@ -125,9 +125,9 @@ func (c *sessionManagerClient) GetAllTCP(ctx context.Context, in *SessionConfig,
 	return out, nil
 }
 
-func (c *sessionManagerClient) DeletRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error) {
+func (c *sessionManagerClient) DeleteRemoteGatewayConfig(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubOperationResponse, error) {
 	out := new(OpenIoTHubOperationResponse)
-	err := c.cc.Invoke(ctx, "/pb.SessionManager/DeletRemoteGatewayConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.SessionManager/DeleteRemoteGatewayConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -154,7 +154,7 @@ type SessionManagerServer interface {
 	GetAllTCP(context.Context, *SessionConfig) (*PortList, error)
 	//:TODO VPN接口
 	// 通知这个网关删除配置文件中的token
-	DeletRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error)
+	DeleteRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error)
 	mustEmbedUnimplementedSessionManagerServer()
 }
 
@@ -189,8 +189,8 @@ func (UnimplementedSessionManagerServer) RefreshmDNSProxyList(context.Context, *
 func (UnimplementedSessionManagerServer) GetAllTCP(context.Context, *SessionConfig) (*PortList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllTCP not implemented")
 }
-func (UnimplementedSessionManagerServer) DeletRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeletRemoteGatewayConfig not implemented")
+func (UnimplementedSessionManagerServer) DeleteRemoteGatewayConfig(context.Context, *SessionConfig) (*OpenIoTHubOperationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRemoteGatewayConfig not implemented")
 }
 func (UnimplementedSessionManagerServer) mustEmbedUnimplementedSessionManagerServer() {}
 
@@ -367,20 +367,20 @@ func _SessionManager_GetAllTCP_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SessionManager_DeletRemoteGatewayConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SessionManager_DeleteRemoteGatewayConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SessionConfig)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SessionManagerServer).DeletRemoteGatewayConfig(ctx, in)
+		return srv.(SessionManagerServer).DeleteRemoteGatewayConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.SessionManager/DeletRemoteGatewayConfig",
+		FullMethod: "/pb.SessionManager/DeleteRemoteGatewayConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SessionManagerServer).DeletRemoteGatewayConfig(ctx, req.(*SessionConfig))
+		return srv.(SessionManagerServer).DeleteRemoteGatewayConfig(ctx, req.(*SessionConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -426,8 +426,8 @@ var _SessionManager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _SessionManager_GetAllTCP_Handler,
 		},
 		{
-			MethodName: "DeletRemoteGatewayConfig",
-			Handler:    _SessionManager_DeletRemoteGatewayConfig_Handler,
+			MethodName: "DeleteRemoteGatewayConfig",
+			Handler:    _SessionManager_DeleteRemoteGatewayConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
