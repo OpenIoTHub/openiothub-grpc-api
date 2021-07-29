@@ -122,6 +122,8 @@ service SessionManager {
     rpc DeleteOneSession (SessionConfig) returns (OpenIoTHubEmpty) {}
     rpc GetOneSession (SessionConfig) returns (SessionConfig) {}
     rpc GetAllSession (OpenIoTHubEmpty) returns (SessionList) {}
+
+    rpc UpdateSessionNameDescription (SessionConfig) returns (SessionConfig) {}
     // Socks5
     rpc CreateOneSOCKS5 (SOCKS5Config) returns (SOCKS5Config) {}
     rpc DeleteOneSOCKS5 (SOCKS5Config) returns (OpenIoTHubEmpty) {}

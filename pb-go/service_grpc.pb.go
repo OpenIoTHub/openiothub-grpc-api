@@ -22,6 +22,7 @@ type SessionManagerClient interface {
 	DeleteOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
 	GetOneSession(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*SessionConfig, error)
 	GetAllSession(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*SessionList, error)
+	UpdateSessionNameDescription(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*SessionConfig, error)
 	// Socks5
 	CreateOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*SOCKS5Config, error)
 	DeleteOneSOCKS5(ctx context.Context, in *SOCKS5Config, opts ...grpc.CallOption) (*OpenIoTHubEmpty, error)
@@ -74,6 +75,15 @@ func (c *sessionManagerClient) GetOneSession(ctx context.Context, in *SessionCon
 func (c *sessionManagerClient) GetAllSession(ctx context.Context, in *OpenIoTHubEmpty, opts ...grpc.CallOption) (*SessionList, error) {
 	out := new(SessionList)
 	err := c.cc.Invoke(ctx, "/pb.SessionManager/GetAllSession", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sessionManagerClient) UpdateSessionNameDescription(ctx context.Context, in *SessionConfig, opts ...grpc.CallOption) (*SessionConfig, error) {
+	out := new(SessionConfig)
+	err := c.cc.Invoke(ctx, "/pb.SessionManager/UpdateSessionNameDescription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -143,6 +153,7 @@ type SessionManagerServer interface {
 	DeleteOneSession(context.Context, *SessionConfig) (*OpenIoTHubEmpty, error)
 	GetOneSession(context.Context, *SessionConfig) (*SessionConfig, error)
 	GetAllSession(context.Context, *OpenIoTHubEmpty) (*SessionList, error)
+	UpdateSessionNameDescription(context.Context, *SessionConfig) (*SessionConfig, error)
 	// Socks5
 	CreateOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error)
 	DeleteOneSOCKS5(context.Context, *SOCKS5Config) (*OpenIoTHubEmpty, error)
@@ -173,6 +184,9 @@ func (UnimplementedSessionManagerServer) GetOneSession(context.Context, *Session
 }
 func (UnimplementedSessionManagerServer) GetAllSession(context.Context, *OpenIoTHubEmpty) (*SessionList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllSession not implemented")
+}
+func (UnimplementedSessionManagerServer) UpdateSessionNameDescription(context.Context, *SessionConfig) (*SessionConfig, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSessionNameDescription not implemented")
 }
 func (UnimplementedSessionManagerServer) CreateOneSOCKS5(context.Context, *SOCKS5Config) (*SOCKS5Config, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOneSOCKS5 not implemented")
@@ -273,6 +287,24 @@ func _SessionManager_GetAllSession_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SessionManagerServer).GetAllSession(ctx, req.(*OpenIoTHubEmpty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SessionManager_UpdateSessionNameDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SessionConfig)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SessionManagerServer).UpdateSessionNameDescription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.SessionManager/UpdateSessionNameDescription",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SessionManagerServer).UpdateSessionNameDescription(ctx, req.(*SessionConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -404,6 +436,10 @@ var _SessionManager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAllSession",
 			Handler:    _SessionManager_GetAllSession_Handler,
+		},
+		{
+			MethodName: "UpdateSessionNameDescription",
+			Handler:    _SessionManager_UpdateSessionNameDescription_Handler,
 		},
 		{
 			MethodName: "CreateOneSOCKS5",

@@ -4,6 +4,9 @@
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb-go/service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
@@ -149,10 +152,10 @@
     <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1627105741904">
+    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1627107591669">
       <screen x="0" y="25" width="1680" height="986" />
     </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1627105741904" />
+    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1627107591669" />
     <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
       <screen x="0" y="25" width="1680" height="986" />
     </state>

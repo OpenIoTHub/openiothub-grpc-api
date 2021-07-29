@@ -35,6 +35,11 @@ class SessionManagerClient extends $grpc.Client {
           '/pb.SessionManager/GetAllSession',
           ($0.OpenIoTHubEmpty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.SessionList.fromBuffer(value));
+  static final _$updateSessionNameDescription =
+      $grpc.ClientMethod<$0.SessionConfig, $0.SessionConfig>(
+          '/pb.SessionManager/UpdateSessionNameDescription',
+          ($0.SessionConfig value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value));
   static final _$createOneSOCKS5 =
       $grpc.ClientMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
           '/pb.SessionManager/CreateOneSOCKS5',
@@ -101,6 +106,15 @@ class SessionManagerClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$getAllSession, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$0.SessionConfig> updateSessionNameDescription(
+      $0.SessionConfig request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$updateSessionNameDescription, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -188,6 +202,13 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.OpenIoTHubEmpty.fromBuffer(value),
         ($0.SessionList value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SessionConfig, $0.SessionConfig>(
+        'UpdateSessionNameDescription',
+        updateSessionNameDescription_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SessionConfig.fromBuffer(value),
+        ($0.SessionConfig value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SOCKS5Config, $0.SOCKS5Config>(
         'CreateOneSOCKS5',
         createOneSOCKS5_Pre,
@@ -253,6 +274,11 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
     return getAllSession(call, await request);
   }
 
+  $async.Future<$0.SessionConfig> updateSessionNameDescription_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.SessionConfig> request) async {
+    return updateSessionNameDescription(call, await request);
+  }
+
   $async.Future<$0.SOCKS5Config> createOneSOCKS5_Pre(
       $grpc.ServiceCall call, $async.Future<$0.SOCKS5Config> request) async {
     return createOneSOCKS5(call, await request);
@@ -291,6 +317,8 @@ abstract class SessionManagerServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.SessionList> getAllSession(
       $grpc.ServiceCall call, $0.OpenIoTHubEmpty request);
+  $async.Future<$0.SessionConfig> updateSessionNameDescription(
+      $grpc.ServiceCall call, $0.SessionConfig request);
   $async.Future<$0.SOCKS5Config> createOneSOCKS5(
       $grpc.ServiceCall call, $0.SOCKS5Config request);
   $async.Future<$0.OpenIoTHubEmpty> deleteOneSOCKS5(
