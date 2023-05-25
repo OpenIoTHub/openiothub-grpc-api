@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5b86273c-518b-48bf-8a98-4aad36a1bcd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/openiothub-grpc-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/openiothub-grpc-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pb/service.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pb.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pb/service.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbenum.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbgrpc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pb/service.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pb/service.pbjson.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pb-go/service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb-go/service_grpc.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.16.4/libexec" />
+  <component name="GOROOT" url="file:///usr/local/opt/go/libexec" />
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -28,34 +37,41 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="t8kkxz4y" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1bkW20yz8DyfjrdkjG1V8eotxvs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="GO_FMT" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
-    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
-    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
-    <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="go.sdk.automatically.set" value="true" />
-    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="go.sdk" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.vendoring.notification.had.been.shown": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/iotserv/git/openiothub-grpc-api/.github/workflows",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github/workflows" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,7 +101,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -127,9 +143,7 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -145,28 +159,15 @@
     <MESSAGE value="添加uuid" />
     <MESSAGE value="portConfig字段扩充" />
     <MESSAGE value="删除远程网关配置jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除远程网关配置jwt" />
+    <MESSAGE value="修改网关名称" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改网关名称" />
   </component>
   <component name="VgoProject">
-    <integration-enabled>true</integration-enabled>
-    <proxy>https://mirrors.aliyun.com/goproxy/,direct</proxy>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="421" y="119" key="CommitChangelistDialog2" timestamp="1627107591669">
-      <screen x="0" y="25" width="1680" height="986" />
-    </state>
-    <state x="421" y="119" key="CommitChangelistDialog2/0.25.1680.986@0.25.1680.986" timestamp="1627107591669" />
-    <state x="162" y="114" key="DiffContextDialog" timestamp="1626415997462">
-      <screen x="0" y="25" width="1680" height="986" />
-    </state>
-    <state x="162" y="114" key="DiffContextDialog/0.25.1680.986@0.25.1680.986" timestamp="1626415997462" />
-    <state x="349" y="154" key="SettingsEditor" timestamp="1626514024797">
-      <screen x="0" y="25" width="1680" height="986" />
-    </state>
-    <state x="349" y="154" key="SettingsEditor/0.25.1680.986@0.25.1680.986" timestamp="1626514024797" />
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1626415694098">
-      <screen x="0" y="25" width="1680" height="986" />
-    </state>
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.25.1680.986@0.25.1680.986" timestamp="1626415694098" />
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://mirrors.aliyun.com/goproxy/,direct" />
+      </map>
+    </environment>
+    <settings-migrated>true</settings-migrated>
   </component>
 </project>

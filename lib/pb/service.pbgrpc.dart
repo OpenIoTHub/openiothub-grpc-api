@@ -2,8 +2,8 @@
 //  Generated code. Do not modify.
 //  source: service.proto
 //
-// @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:async' as $async;
 
@@ -73,100 +73,72 @@ class SessionManagerClient extends $grpc.Client {
           ($core.List<$core.int> value) =>
               $0.OpenIoTHubOperationResponse.fromBuffer(value));
 
-  SessionManagerClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
-      : super(channel, options: options);
+  SessionManagerClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.SessionConfig> createOneSession(
       $0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOneSession, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOneSession, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneSession(
       $0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteOneSession, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOneSession, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.SessionConfig> getOneSession($0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getOneSession, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOneSession, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.SessionList> getAllSession($0.OpenIoTHubEmpty request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getAllSession, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllSession, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.SessionConfig> updateSessionNameDescription(
       $0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$updateSessionNameDescription, $async.Stream.fromIterable([request]),
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateSessionNameDescription, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$0.SOCKS5Config> createOneSOCKS5($0.SOCKS5Config request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOneSOCKS5, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOneSOCKS5, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneSOCKS5(
       $0.SOCKS5Config request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteOneSOCKS5, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOneSOCKS5, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.SOCKS5Config> getOneSOCKS5($0.SOCKS5Config request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getOneSOCKS5, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOneSOCKS5, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> refreshmDNSProxyList(
       $0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$refreshmDNSProxyList, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$refreshmDNSProxyList, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortList> getAllTCP($0.SessionConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getAllTCP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllTCP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubOperationResponse>
       deleteRemoteGatewayConfig($0.SessionConfig request,
-          {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteRemoteGatewayConfig, $async.Stream.fromIterable([request]),
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteRemoteGatewayConfig, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 }
 
@@ -416,134 +388,93 @@ class CommonDeviceManagerClient extends $grpc.Client {
       ($core.List<$core.int> value) => $0.PortList.fromBuffer(value));
 
   CommonDeviceManagerClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> addDevice($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$addDevice, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addDevice, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> delDevice($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$delDevice, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$delDevice, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.DeviceList> getAllDevice($0.OpenIoTHubEmpty request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getAllDevice, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllDevice, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> setDeviceMac($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setDeviceMac, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setDeviceMac, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> wakeOnLAN($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$wakeOnLAN, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$wakeOnLAN, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> createOneTCP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOneTCP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOneTCP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneTCP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteOneTCP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOneTCP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> getOneTCP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getOneTCP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOneTCP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortList> getAllTCP($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getAllTCP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllTCP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> createOneUDP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOneUDP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOneUDP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneUDP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteOneUDP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOneUDP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> getOneUDP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getOneUDP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOneUDP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortList> getAllUDP($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getAllUDP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllUDP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> createOneFTP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$createOneFTP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOneFTP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> deleteOneFTP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteOneFTP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOneFTP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortConfig> getOneFTP($0.PortConfig request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getOneFTP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOneFTP, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PortList> getAllFTP($0.Device request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(_$getAllFTP, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllFTP, request, options: options);
   }
 }
 
@@ -836,70 +767,52 @@ class UtilsClient extends $grpc.Client {
           ($0.OpenIoTHubStringValue value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.TokenModel.fromBuffer(value));
 
-  UtilsClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
-      : super(channel, options: options);
+  UtilsClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.OpenIoTHubOperationResponse> syncConfigWithToken(
       $0.IoTManagerServerAndToken request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$syncConfigWithToken, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncConfigWithToken, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubStringValue> getAllConfig(
       $0.OpenIoTHubEmpty request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getAllConfig, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubEmpty> loadAllConfig(
       $0.OpenIoTHubStringValue request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$loadAllConfig, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$loadAllConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.MDNSServiceList> getAllmDNSServiceList(
       $0.OpenIoTHubEmpty request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getAllmDNSServiceList, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAllmDNSServiceList, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.MDNSServiceList> getmDNSServiceListByType(
       $0.OpenIoTHubStringValue request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getmDNSServiceListByType, $async.Stream.fromIterable([request]),
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getmDNSServiceListByType, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$0.OpenIoTHubStringValue> convertOctonaryUtf8(
       $0.OpenIoTHubStringValue request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$convertOctonaryUtf8, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$convertOctonaryUtf8, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.TokenModel> getTokenModel(
       $0.OpenIoTHubStringValue request,
-      {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getTokenModel, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getTokenModel, request, options: options);
   }
 }
 
